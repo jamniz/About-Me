@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
     portfolio1.className = "portfolio1"
     portfolio1.querySelector(".portfolio1")
     let portfolio1a = document.createElement("a")
-    portfolio1a.href = "https://github.com/jamniz/My-Portfolio"
+    portfolio1a.href = "https://jamniz.github.io/My-Portfolio/"
     portfolio1a.target = "_blanc"
     portfolio1a.rel = "noopener noreferrer"
     portfolio1a.title = "Mon portfolio"
