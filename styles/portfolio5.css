@@ -1,0 +1,786 @@
+body {
+  background: linear-gradient(to bottom, #e6f0ff 0%, #6699ff 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(7, max-content);
+  grid-template-columns: 3fr 5fr;
+  grid-template-areas: "header header" "navZone navZone" "asideZone asideZone" "mainZone mainZone" "skills skills" "projects projects" "footer footer";
+  grid-auto-rows: max-content;
+  color: #030376;
+  margin: 2%;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(6, max-content);
+    grid-template-areas: "header header" "navZone asideZone" "navZone mainZone" "navZone skills" "projects projects" "footer footer";
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: "header header header" "navZone mainZone asideZone" "navZone mainZone skills" "projects projects projects" "footer footer footer";
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: "header header header" "navZone mainZone asideZone" "navZone mainZone skills" "navZone projects projects" "footer footer footer";
+  }
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas: ". . selectBtn" ". navZone1 .";
+  margin-bottom: 5%;
+}
+header .selectBtn {
+  grid-area: selectBtn;
+  text-align: right;
+  padding: 5% 0;
+  margin-right: 2%;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  header .selectBtn {
+    padding: 5% 0 3%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header .selectBtn {
+    padding: 5% 0 1.5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .selectBtn {
+    padding: 4% 0 0.3%;
+  }
+}
+header .selectBtn select {
+  border: none;
+  border-radius: 15px;
+  background-color: #80aaff;
+  color: #030376;
+  padding: 0.8vw 1.2vw;
+}
+
+.navZone1 {
+  grid-area: navZone1;
+  display: block;
+  font-family: "Kalam", Helvetica, Arial, sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  margin: 2%;
+}
+.navZone1 .intro-1 {
+  font-size: 2.6vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .navZone1 .intro-1 {
+    font-size: 2.3vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navZone1 .intro-1 {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navZone1 .intro-1 {
+    font-size: 1.8vw;
+  }
+}
+.navZone1 .intro-2 {
+  font-size: 2.2vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .navZone1 .intro-2 {
+    font-size: 1.9vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navZone1 .intro-2 {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navZone1 .intro-2 {
+    font-size: 1.4vw;
+  }
+}
+
+.navZone {
+  grid-area: navZone;
+  display: block;
+}
+.navZone .navZone2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "zoneBouton1 zoneBouton3" "zoneSkillsBtn zonePrBtn";
+  justify-self: center;
+  text-align: center;
+  gap: 10%;
+  margin: 0 10%;
+}
+@media screen and (min-width: 576px) {
+  .navZone .navZone2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 5%;
+    position: sticky;
+    top: 7%;
+  }
+}
+
+.zoneBouton1 {
+  grid-area: zoneBouton1;
+}
+
+.zoneBouton3 {
+  grid-area: zoneBouton3;
+}
+
+.zoneSkillsBtn {
+  grid-area: zoneSkillsBtn;
+}
+
+.zonePrBtn {
+  grid-area: zonePrBtn;
+}
+
+.zoneBouton1,
+.zoneBouton3,
+.zoneSkillsBtn,
+.zonePrBtn {
+  margin-top: 4%;
+}
+@media screen and (min-width: 576px) {
+  .zoneBouton1,
+  .zoneBouton3,
+  .zoneSkillsBtn,
+  .zonePrBtn {
+    margin-top: 20%;
+  }
+}
+
+.asideZone {
+  grid-area: asideZone;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  grid-template-areas: "zoneBloc2" "zoneBouton2" "zoneBloc4";
+  justify-self: center;
+  margin: 5% 2% 2%;
+}
+@media screen and (min-width: 576px) {
+  .asideZone {
+    margin: 10% 2% 2%;
+  }
+}
+
+.zoneBloc2 {
+  grid-area: zoneBloc2;
+}
+
+.zoneBouton2 {
+  grid-area: zoneBouton2;
+  justify-self: center;
+}
+
+.zoneBloc4 {
+  grid-area: zoneBloc4;
+}
+
+.zoneBloc2,
+.zoneBloc4 {
+  margin: 2vw 5vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .zoneBloc2,
+  .zoneBloc4 {
+    margin: 2vw 3vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .zoneBloc2,
+  .zoneBloc4 {
+    margin: 2vw;
+  }
+}
+
+.bloc2First,
+.bloc2Second,
+.bloc4First,
+.bloc4Second {
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+  font-size: 2.2vw;
+  text-align: justify;
+  opacity: 0.8;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .bloc2First,
+  .bloc2Second,
+  .bloc4First,
+  .bloc4Second {
+    font-size: 2vw;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bloc2First,
+  .bloc2Second,
+  .bloc4First,
+  .bloc4Second {
+    font-size: 1.6vw;
+    opacity: 0.7;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .bloc2First,
+  .bloc2Second,
+  .bloc4First,
+  .bloc4Second {
+    font-size: 1.3vw;
+    opacity: 0.6;
+    text-align: left;
+  }
+}
+
+.mainZone {
+  grid-area: mainZone;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  justify-self: center;
+  grid-template-areas: "bloc1" "bloc3" "devImg";
+}
+
+.zoneBloc1 {
+  grid-area: bloc1;
+}
+
+.zoneBloc3 {
+  grid-area: bloc3;
+}
+
+.zoneBloc1,
+.zoneBloc3 {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3%;
+  box-shadow: rgba(0, 0, 102, 0.56) 0px 22px 70px 4px;
+  padding: 2.5vw;
+  margin: 3vw auto;
+  width: 85%;
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+  font-size: 2.4vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .zoneBloc1,
+  .zoneBloc3 {
+    font-size: 2.2vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .zoneBloc1,
+  .zoneBloc3 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .zoneBloc1,
+  .zoneBloc3 {
+    font-size: 1.4vw;
+  }
+}
+.zoneBloc1 > ul,
+.zoneBloc3 > ul {
+  list-style: inside;
+}
+
+.zoneBouton5,
+.zoneBouton6 {
+  margin: 2%;
+  text-align: right;
+}
+
+.zoneDevImg {
+  grid-area: devImg;
+}
+
+.devImg {
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 5vw auto;
+  filter: drop-shadow(0px 0px 70px #022975);
+  border-radius: 10%;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .devImg {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .devImg {
+    width: 75%;
+  }
+}
+
+.skills {
+  grid-area: skills;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, max-content);
+  grid-template-areas: "skillsZone1 skillsZone1" "skillsZone2 skillsZone2" "zoneBouton7 zoneBouton7";
+  margin: 3%;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .skills {
+    margin-left: 5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+    grid-template-areas: "skillsZone1" "skillsZone2" "zoneBouton7";
+    margin: 10% 0 5% 0;
+  }
+}
+
+.skillsZone1 {
+  grid-area: skillsZone1;
+}
+
+.skillsZone2 {
+  grid-area: skillsZone2;
+}
+
+.skillsZone1,
+.prZone1 {
+  display: block;
+  font-family: "Kalam", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 2.6vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .skillsZone1,
+  .prZone1 {
+    font-size: 2.4vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .skillsZone1,
+  .prZone1 {
+    font-size: 2.1vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .skillsZone1,
+  .prZone1 {
+    font-size: 1.8vw;
+  }
+}
+
+.skillsZone2 {
+  display: block;
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+  font-size: 2.4vw;
+  margin: 2%;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .skillsZone2 {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .skillsZone2 {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .skillsZone2 {
+    font-size: 1.4vw;
+  }
+}
+.skillsZone2 > ul {
+  list-style: inside;
+}
+
+.zoneBouton7 {
+  grid-area: zoneBouton7;
+}
+
+.zoneBouton7,
+.zoneBouton8 {
+  position: sticky;
+  bottom: 2%;
+  align-self: end;
+  justify-self: end;
+}
+
+.projects {
+  grid-area: projects;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, max-content);
+  grid-template-areas: "prZone1 prZone1 prZone1" "prZone2 prZone2 prZone2" "prZone3 prZone3 ." ". . zoneBouton8";
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .projects {
+    margin-left: 5%;
+  }
+}
+
+.prZone1 {
+  grid-area: prZone1;
+}
+
+.prZone2 {
+  grid-area: prZone2;
+  text-align: center;
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+  opacity: 0.6;
+  font-size: 2vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .prZone2 {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .prZone2 {
+    font-size: 1.4vw;
+  }
+}
+
+.prZone3 {
+  grid-area: prZone3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
+  grid-template-areas: "portfolio1 portfolio2";
+  margin: 2vw 3vw;
+  padding: 2vw;
+  border-radius: 8%;
+  box-shadow: rgba(0, 0, 102, 0.1) 0px 0px 25px 15px inset;
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+}
+
+.portfolio1 {
+  grid-area: portfolio1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2vw;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .portfolio1 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .portfolio1 {
+    font-size: 1.5vw;
+  }
+}
+.portfolio1 a {
+  color: #030376;
+  text-decoration: underline;
+}
+.portfolio1 a:hover {
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+.portfolio1b {
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.6em;
+  line-height: 0.9;
+}
+
+.portfolio2 {
+  grid-area: portfolio2;
+  font-size: 1.8vw;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .portfolio2 {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .portfolio2 {
+    font-size: 1.3vw;
+  }
+}
+
+.zoneBouton8 {
+  grid-area: zoneBouton8;
+}
+
+.footerZone {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas: "zoneMyself" "zoneContactBtn";
+  margin: 5% 0 3%;
+}
+
+.zoneContactBtn {
+  grid-area: zoneContactBtn;
+  margin: 0 0 5% 8%;
+}
+
+.zoneMyself {
+  grid-area: zoneMyself;
+  display: block;
+  padding: 2vw;
+  text-align: center;
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+  font-size: 2.2vw;
+}
+.zoneMyself a {
+  color: #030376;
+  text-decoration: underline;
+}
+.zoneMyself a:hover {
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .zoneMyself {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .zoneMyself {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .zoneMyself {
+    font-size: 1.2vw;
+  }
+}
+.zoneMyself .myPlace {
+  opacity: 0.7;
+}
+
+.zoneGitHub,
+.portfolio1a {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+  background-color: rgba(153, 187, 255, 0.3);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  padding: 0.6vw 2.8vw;
+  margin: 1%;
+}
+
+.toggleBtn1,
+.toggleBtn3,
+.togglePrBtn,
+.toggleSkillsBtn,
+.toggleBtn2,
+.toggleBtn5,
+.toggleBtn6,
+.toggleBouton7,
+.toggleBouton8,
+.toggleContactBtn {
+  position: absolute;
+  left: -9999px;
+}
+
+.bouton1,
+.bouton3,
+.skillsBtn,
+.projectsBtn,
+.bouton2,
+.contactBtn {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.bouton5,
+.bouton6 {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+  background-color: rgba(153, 187, 255, 0.3);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.bouton7,
+.bouton8 {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+  background-color: rgba(153, 187, 255, 0.9);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.bouton1,
+.bouton3,
+.skillsBtn,
+.projectsBtn,
+.contactBtn {
+  padding: 0.6vw 2.6vw;
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
+  font-size: 2.4vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .bouton1,
+  .bouton3,
+  .skillsBtn,
+  .projectsBtn,
+  .contactBtn {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bouton1,
+  .bouton3,
+  .skillsBtn,
+  .projectsBtn,
+  .contactBtn {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .bouton1,
+  .bouton3,
+  .skillsBtn,
+  .projectsBtn,
+  .contactBtn {
+    font-size: 1.6vw;
+  }
+}
+
+.bouton2,
+.bouton5,
+.bouton6,
+.bouton7,
+.bouton8 {
+  padding: 0.6vw 2.6vw;
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
+  font-size: 2.2vw;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .bouton2,
+  .bouton5,
+  .bouton6,
+  .bouton7,
+  .bouton8 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bouton2,
+  .bouton5,
+  .bouton6,
+  .bouton7,
+  .bouton8 {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .bouton2,
+  .bouton5,
+  .bouton6,
+  .bouton7,
+  .bouton8 {
+    font-size: 1.3vw;
+  }
+}
+
+.bouton7,
+.bouton8 {
+  position: sticky;
+  bottom: 2%;
+  align-self: end;
+  justify-self: end;
+}
+
+.bouton1:hover,
+.bouton3:hover,
+.bouton2:hover,
+.skillsBtn:hover,
+.projectsBtn:hover,
+.contactBtn:hover {
+  box-shadow: rgba(0, 0, 102, 0.56) 0px 22px 70px 4px;
+  background-color: rgba(153, 187, 255, 0.9);
+}
+
+.bouton5:hover,
+.bouton6:hover,
+.bouton7:hover,
+.bouton8:hover {
+  background-color: rgba(51, 119, 255, 0.3);
+}
+
+.bouton1:active,
+.bouton3:active,
+.bouton2:active,
+.skillsBtn:active,
+.projectsBtn:active,
+.bouton5:active,
+.bouton6:active,
+.bouton7:active,
+.bouton8:active,
+.contactBtn:active {
+  background-color: rgba(153, 187, 255, 0.3);
+  border: solid 2px #022975;
+}
+
+.zoneBloc1-open,
+.zoneBloc3-open,
+.zoneBloc2-open,
+.zoneBloc4-open,
+.zoneMyself-open,
+.devImg-open {
+  display: block;
+}
+
+.skills-open,
+.projects-open {
+  display: grid;
+}
+
+.zoneBloc1-close,
+.zoneBloc3-close,
+.zoneBloc2-close,
+.zoneBloc4-close,
+.skills-close,
+.projects-close,
+.zoneMyself-close,
+.devImg-close {
+  display: none;
+}/*# sourceMappingURL=portfolio5.css.map */

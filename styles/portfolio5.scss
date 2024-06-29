@@ -1,0 +1,703 @@
+// Fonts : 
+$ff1: "Dosis", Helvetica, Arial, sans-serif; // texte boutons 
+$ff2: "Kalam", Helvetica, Arial, sans-serif; // texte 'title'
+$ff3: "Catamaran", Helvetica, Arial, sans-serif; // texte de base
+
+// Couleurs :
+$clr-font: #030376;
+$clr1: #666666;
+$clr2: #000000;
+$clr3: #4d4d4d;
+$cbtn1: rgba(255, 255, 255, 0.1);
+$cbtn1b: rgba(255, 255, 255, 0.2);
+$bc-btn: rgba(255, 255, 255, 0.3);
+$bc-btn3: rgba(153, 187, 255, 0.9);
+$bc-btn4: rgba(153, 187, 255, 0.3);
+$bc-btn5: rgba(51, 119, 255, 0.3);
+$c-grad1: #e6f0ff;
+$c-grad2: #6699ff;
+$c-grad3: #022975;
+$select: #80aaff;
+$shadow1: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+$shadow2: rgba(0, 0, 102, 0.56) 0px 22px 70px 4px;
+$shadow4: rgba(0, 0, 102, 0.1) 0px 0px 25px 15px inset;
+
+// Points de rupture (! voir .js) : 
+$pt-ecran: 576px;
+$mo-ecran: 768px;
+$gd-ecran: 1024px;
+
+// Mixin pour les liens
+@mixin link-style($clr-font) {
+    color: $clr-font;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bolder;
+    }
+}
+
+body {
+    background: linear-gradient(to bottom, $c-grad1 0%, $c-grad2 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(7, max-content);
+    grid-template-columns: 3fr 5fr;
+    grid-template-areas: 
+        "header header"
+        "navZone navZone"
+        "asideZone asideZone"
+        "mainZone mainZone"
+        "skills skills"
+        "projects projects"
+        "footer footer";
+    grid-auto-rows: max-content;
+    color: $clr-font;
+    margin: 2%;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(6, max-content);
+        grid-template-areas: 
+            "header header"
+            "navZone asideZone"
+            "navZone mainZone"
+            "navZone skills" 
+            "projects projects"
+            "footer footer";
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        grid-template-columns: 2fr 3fr 2fr;
+        grid-template-rows: repeat(5, max-content);
+        grid-template-areas: 
+            "header header header"
+            "navZone mainZone asideZone"
+            "navZone mainZone skills"
+            "projects projects projects"
+            "footer footer footer";
+    }
+    @media screen and (min-width: $gd-ecran) {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(5, max-content);
+        grid-template-areas: 
+            "header header header"
+            "navZone mainZone asideZone"
+            "navZone mainZone skills"
+            "navZone projects projects"
+            "footer footer footer";
+    }
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas: ". . selectBtn" ". navZone1 .";
+    margin-bottom: 5%;
+
+    .selectBtn {
+        grid-area: selectBtn;
+        text-align: right;
+        padding: 5% 0;
+        margin-right: 2%;
+
+        @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+            padding: 5% 0 3%;
+        }
+        @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+            padding: 5% 0 1.5%;
+        }
+        @media screen and (min-width: $gd-ecran) {
+            padding: 4% 0 0.3%;
+        }
+
+        select {
+            border: none;
+            border-radius: 15px;
+            background-color: $select;
+            color: $clr-font;
+            padding: 0.8vw 1.2vw;
+        }
+    }
+}
+.navZone1 {
+    grid-area: navZone1;
+    display: block;
+    font-family: $ff2;
+    opacity: 0.5;
+    text-align: center;
+    margin: 2%;
+    
+    .intro-1 {
+        font-size: 2.6vw;
+        @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+            font-size: 2.3vw;
+        }
+        @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+            font-size: 2vw;
+        }
+        @media screen and (min-width: $gd-ecran) {
+            font-size: 1.8vw;
+        }
+    }
+    .intro-2 {
+        font-size: 2.2vw;
+        @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+            font-size: 1.9vw;
+        }
+        @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+            font-size: 1.6vw;
+        }
+        @media screen and (min-width: $gd-ecran) {
+            font-size: 1.4vw;
+        }
+    }
+}
+
+.navZone {
+    grid-area: navZone;
+    display: block;
+    .navZone2 {
+        // grid-area: navZone2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "zoneBouton1 zoneBouton3"
+            "zoneSkillsBtn zonePrBtn";
+        justify-self: center;
+        text-align: center;
+        gap: 10%;
+        margin: 0 10%;
+
+        @media screen and (min-width: $pt-ecran) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 5%;
+            position: sticky;
+            top: 7%;
+            // bottom: 5%;
+        }
+    }
+}
+
+.zoneBouton1 {
+    grid-area: zoneBouton1;
+}
+.zoneBouton3 {
+    grid-area: zoneBouton3;
+}
+.zoneSkillsBtn {
+    grid-area: zoneSkillsBtn;
+}
+.zonePrBtn {
+    grid-area: zonePrBtn;
+}
+.zoneBouton1,
+.zoneBouton3,
+.zoneSkillsBtn,
+.zonePrBtn {
+    margin-top: 4%;
+
+    @media screen and (min-width: $pt-ecran) {
+        margin-top: 20%;
+    }
+}
+
+.asideZone {
+    grid-area: asideZone;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "zoneBloc2" "zoneBouton2" "zoneBloc4";
+    justify-self: center;
+    margin: 5% 2% 2%;
+
+    @media screen and (min-width: $pt-ecran) {
+        margin : 10% 2% 2%;
+    }
+}
+
+.zoneBloc2 {
+    grid-area: zoneBloc2;
+}
+.zoneBouton2 {
+    grid-area: zoneBouton2;
+    // align-self: center;
+    justify-self: center;
+}
+.zoneBloc4 {
+    grid-area: zoneBloc4;
+}
+.zoneBloc2,
+.zoneBloc4 {
+    margin: 2vw 5vw;
+    // display: bloc;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        margin: 2vw 3vw;
+    }
+    @media screen and (min-width: $mo-ecran) {
+        margin: 2vw;
+    }
+        
+}
+
+.bloc2First,
+.bloc2Second,
+.bloc4First,
+.bloc4Second {
+    font-family: $ff3;
+    font-size: 2.2vw;
+    text-align: justify;
+    opacity: 0.8;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 2vw;
+        text-align: left;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.6vw;
+        opacity: 0.7;
+        text-align: left;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.3vw;
+        opacity: 0.6;
+        text-align: left;
+    }
+}
+
+.mainZone {
+    grid-area: mainZone;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    justify-self: center;
+    grid-template-areas: "bloc1" "bloc3" "devImg";
+}
+.zoneBloc1 {
+    grid-area: bloc1;
+}
+.zoneBloc3 {
+    grid-area: bloc3;
+}
+.zoneBloc1,
+.zoneBloc3 {
+    display: block;
+    background-color: $cbtn1;
+    border-radius: 3%;
+    box-shadow: $shadow2;
+    padding: 2.5vw;
+    margin: 3vw auto;
+    width: 85%;
+    font-family: $ff3;
+    font-size: 2.4vw;
+
+        @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+            font-size: 2.2vw;
+        }
+        @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+            font-size: 1.8vw;
+        }
+        @media screen and (min-width: $gd-ecran) {
+            font-size: 1.4vw;
+        }
+
+    &>ul {
+        list-style: inside;
+        }
+}
+.zoneBouton5,
+.zoneBouton6 {
+    margin: 2%;
+    text-align: right;
+}
+.zoneDevImg {
+    grid-area: devImg;
+}
+.devImg {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 5vw auto;
+    filter: drop-shadow(0px 0px 70px $c-grad3);
+    border-radius: 10%;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        width: 70%;
+    }
+    @media screen and (min-width: $mo-ecran) {
+        width: 75%;
+    }
+}
+
+.skills {
+    grid-area: skills;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "skillsZone1 skillsZone1" "skillsZone2 skillsZone2" "zoneBouton7 zoneBouton7";
+    margin: 3%;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        margin-left: 5%;
+    }
+    @media screen and (min-width: $mo-ecran) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "skillsZone1" "skillsZone2" "zoneBouton7";
+        // margin-left: 5%;
+        margin: 10% 0 5% 0;
+    }
+}
+.skillsZone1 {
+    grid-area: skillsZone1;
+}
+.skillsZone2 {
+    grid-area: skillsZone2;
+}
+// .skillsZone3 {
+//     grid-area: skillsZone3;
+// }
+.skillsZone1,
+.prZone1 {
+    display: block;
+    font-family: $ff2;
+    text-align: center;
+    font-size: 2.6vw;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 2.4vw;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 2.1vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.8vw;
+    }
+}
+.skillsZone2 {
+    display: block;
+    font-family: $ff3;
+    font-size: 2.4vw;
+    margin: 2%;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 2vw;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.6vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.4vw;
+    }
+
+    &>ul {
+        list-style: inside;
+        }
+
+}
+.zoneBouton7 {
+    grid-area: zoneBouton7;
+}
+.zoneBouton7,
+.zoneBouton8 {
+    position: sticky;
+    bottom: 2%;
+    align-self: end;
+    justify-self: end;
+}
+
+.projects {
+    grid-area: projects;
+    margin: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, max-content);
+    grid-template-areas: 
+        "prZone1 prZone1 prZone1" 
+        "prZone2 prZone2 prZone2"
+        "prZone3 prZone3 ."
+        ". . zoneBouton8";
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        margin-left: 5%;
+    }
+}
+.prZone1 {
+    grid-area: prZone1;
+}
+.prZone2 {
+    grid-area: prZone2;
+    text-align: center;
+    font-family: $ff3;
+    opacity: 0.6;
+    font-size: 2vw;
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 1.6vw;
+    }
+    @media screen and (min-width: $mo-ecran) {
+        font-size: 1.4vw;
+    }
+}
+.prZone3 {
+    grid-area: prZone3;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: max-content;
+    grid-template-areas: "portfolio1 portfolio2";
+    margin: 2vw 3vw;
+    padding: 2vw;
+    border-radius: 8%;
+    box-shadow: $shadow4;
+    font-family: $ff3;
+    
+}
+.portfolio1 {
+    grid-area: portfolio1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2vw;
+
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.7vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.5vw;
+    }
+
+    a {
+        @include link-style($clr-font);
+    }
+}
+.portfolio1b {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.6em;
+    line-height: 0.9;
+    // padding-top: 5%;
+}
+.portfolio2{
+    grid-area: portfolio2;
+    font-size: 1.8vw;
+
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.5vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.3vw;
+    }
+}
+.zoneBouton8 {
+    grid-area: zoneBouton8;
+}
+
+.footerZone {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas: "zoneMyself" "zoneContactBtn";
+    margin: 5% 0 3%;
+}
+.zoneContactBtn {
+    grid-area: zoneContactBtn;
+    margin: 0 0 5% 8%;
+}
+.zoneMyself {
+    grid-area: zoneMyself;
+    display: block;
+    padding: 2vw;
+    text-align: center;
+    font-family: $ff3;
+    font-size: 2.2vw;
+
+        a {
+            @include link-style($clr-font);
+        }
+
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 1.8vw;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.5vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.2vw;
+    }
+    .myPlace {
+        opacity: 0.7;
+    }
+}
+.zoneGitHub,
+.portfolio1a {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn4;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0.6vw 2.8vw;
+    margin: 1%;
+}
+
+// BOUTONS
+.toggleBtn1,
+.toggleBtn3,
+.togglePrBtn,
+.toggleSkillsBtn,
+.toggleBtn2,
+.toggleBtn5,
+.toggleBtn6,
+.toggleBouton7,
+.toggleBouton8,
+.toggleContactBtn {
+    position: absolute;
+    left: -9999px;
+}
+
+.bouton1,
+.bouton3,
+.skillsBtn,
+.projectsBtn,
+.bouton2,
+.contactBtn {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.bouton5,
+.bouton6 {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn4;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.bouton7,
+.bouton8 {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn3;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.bouton1,
+.bouton3,
+.skillsBtn,
+.projectsBtn,
+.contactBtn {
+    padding: 0.6vw 2.6vw;
+    font-family: $ff1;
+    font-size: 2.4vw;
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 2vw;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.8vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.6vw;
+    }
+}
+.bouton2,
+.bouton5,
+.bouton6,
+.bouton7,
+.bouton8 {
+    padding: 0.6vw 2.6vw;
+    font-family: $ff1;
+    font-size: 2.2vw;
+    @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
+        font-size: 1.8vw;
+    }
+    @media screen and (min-width: $mo-ecran) and (max-width: $gd-ecran) {
+        font-size: 1.6vw;
+    }
+    @media screen and (min-width: $gd-ecran) {
+        font-size: 1.3vw;
+    }
+
+}
+.bouton7,
+.bouton8 {
+    position: sticky;
+    bottom: 2%;
+    align-self: end;
+    justify-self: end;
+}
+
+// Style spécifique aux boutons
+.bouton1:hover,
+.bouton3:hover,
+.bouton2:hover,
+.skillsBtn:hover,
+.projectsBtn:hover,
+.contactBtn:hover {
+    box-shadow: $shadow2;
+    background-color: $bc-btn3;
+}
+.bouton5:hover,
+.bouton6:hover,
+.bouton7:hover,
+.bouton8:hover {
+    background-color: $bc-btn5;
+}
+.bouton1:active,
+.bouton3:active,
+.bouton2:active,
+.skillsBtn:active,
+.projectsBtn:active,
+.bouton5:active,
+.bouton6:active,
+.bouton7:active,
+.bouton8:active,
+.contactBtn:active {
+    background-color: $bc-btn4;
+    border: solid 2px $c-grad3;
+}
+
+// Styles spécifiques aux actions des boutons
+.zoneBloc1-open,
+.zoneBloc3-open,
+.zoneBloc2-open,
+.zoneBloc4-open,
+.zoneMyself-open,
+.devImg-open {
+    display: block;
+}
+.skills-open,
+.projects-open {
+    display: grid;
+}
+.zoneBloc1-close,
+.zoneBloc3-close,
+.zoneBloc2-close,
+.zoneBloc4-close,
+.skills-close,
+.projects-close,
+.zoneMyself-close,
+.devImg-close {
+    display: none;
+}
+
