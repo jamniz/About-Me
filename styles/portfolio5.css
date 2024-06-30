@@ -263,6 +263,11 @@ header .selectBtn select {
   justify-self: center;
   grid-template-areas: "bloc1" "bloc3" "devImg";
 }
+@media screen and (min-width: 576px) {
+  .mainZone {
+    grid-template-areas: "devImg" "bloc1" "bloc3";
+  }
+}
 
 .zoneBloc1 {
   grid-area: bloc1;
@@ -319,20 +324,20 @@ header .selectBtn select {
 
 .devImg {
   display: block;
-  width: 60%;
+  width: 50%;
   height: auto;
   margin: 5vw auto;
   filter: drop-shadow(0px 0px 70px #022975);
   border-radius: 10%;
 }
-@media screen and (min-width: 576px) and (max-width: 768px) {
+@media screen and (min-width: 576px) and (max-width: 1024px) {
   .devImg {
-    width: 70%;
+    width: 60%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .devImg {
-    width: 75%;
+    width: 55%;
   }
 }
 

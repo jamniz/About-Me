@@ -186,32 +186,6 @@ document.addEventListener("DOMContentLoaded", function() {
     zoneBloc1.append(bloc1Text1, list1, zoneBouton5)
     zoneBloc3.append(bloc3Text1, list3, zoneBouton6)
 
-    // "zoneDevImg" affichage
-    let etatZoneBloc1 = false
-    let etatZoneBloc3 = false
-
-    function gererAffichageImage() {
-        etatZoneBloc1 = !etatZoneBloc1
-        etatZoneBloc3 = !etatZoneBloc3
-        if (!etatZoneBloc1 && !etatZoneBloc3) {
-            image1.classList.remove("devImg-open")
-            image1.classList.add("devImg-close")
-        } else {
-            image1.classList.remove("devImg-close")
-            image1.classList.add("devImg-open")
-        }
-    }
-    function afficherImage() {
-        etatZoneBloc1 = !etatZoneBloc1
-        etatZoneBloc3 = !etatZoneBloc3
-        if (etatZoneBloc1 || etatZoneBloc3) {
-            image1.classList.remove("devImg-close")
-            image1.classList.add("devImg-open")
-        } else {
-            image1.classList.remove("devImg-open")
-            image1.classList.add("devImg-close")
-        }
-    }
 
     // "Skills"
     let skillsText2 = document.createElement("p")
@@ -238,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
     portfolio1.className = "portfolio1"
     portfolio1.querySelector(".portfolio1")
     let portfolio1a = document.createElement("a")
-    portfolio1a.href = "https://jamniz.github.io/My-Portfolio/"
+    portfolio1a.href = ""
     portfolio1a.target = "_blanc"
     portfolio1a.rel = "noopener noreferrer"
     portfolio1a.title = "Mon portfolio"
@@ -291,13 +265,10 @@ document.addEventListener("DOMContentLoaded", function() {
         zoneBloc1.classList.remove("zoneBloc1-close")
         zoneBloc1.classList.add("zoneBloc1-open")
         zoneBloc1.scrollIntoView({behavior: "smooth"})
-        gererAffichageImage()
     })
     bouton5.addEventListener("click", function() {
         zoneBloc1.classList.remove("zoneBloc1-open")
         zoneBloc1.classList.add("zoneBloc1-close")
-        // gererAffichageImage()
-        afficherImage()
     })
 
     // "bouton3/bouton6"
@@ -306,13 +277,10 @@ document.addEventListener("DOMContentLoaded", function() {
         zoneBloc3.classList.remove("zoneBloc3-close")
         zoneBloc3.classList.add("zoneBloc3-open")
         zoneBloc3.scrollIntoView({behavior: "smooth"})
-        gererAffichageImage()
     })
     bouton6.addEventListener("click", function() {
         zoneBloc3.classList.remove("zoneBloc1-open")
         zoneBloc3.classList.add("zoneBloc3-close")
-        // gererAffichageImage()
-        afficherImage
     })
 
     // "Bouton2"
