@@ -373,7 +373,7 @@ header {
 .prZone1 {
     display: block;
     font-family: $ff2;
-    text-align: center;
+    // text-align: center;
     font-size: 2.6vw;
 
     @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
@@ -390,7 +390,7 @@ header {
     display: block;
     font-family: $ff3;
     font-size: 2.4vw;
-    margin: 2%;
+    margin: 1.8%;
 
     @media screen and (min-width: $pt-ecran) and (max-width: $mo-ecran) {
         font-size: 2vw;
@@ -405,7 +405,10 @@ header {
     &>ul {
         list-style: inside;
         }
-
+    &>p {
+        // text-align: center;
+        opacity: 0.5;
+    }
 }
 .zoneBouton7 {
     grid-area: zoneBouton7;
@@ -436,6 +439,7 @@ header {
 }
 .prZone1 {
     grid-area: prZone1;
+    text-align: center;
 }
 .prZone2 {
     grid-area: prZone2;

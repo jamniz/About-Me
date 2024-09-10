@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Réinitialiser la valeur du sélecteur de langue
     document.getElementById("langue").value = "francais";
 
@@ -45,80 +45,80 @@ document.addEventListener("DOMContentLoaded", function() {
         francais: {
             "intro-1-text": "À propos de moi...",
             "intro-2-text": "Je vous souhaite une agréable lecture.",
-            "bouton1" : "Ce que je recherche",
-            "bouton3" : "Ce que je propose",
-            "skillsBtn" : "Mes compétences",
+            "bouton1": "Ce que je recherche",
+            "bouton3": "Ce que je propose",
+            "skillsBtn": "Mes compétences",
             // "projectsBtn" : "Mes projets, réalisations,...",
-            "projectsBtn" : "Mes réalisations",
-            "bloc2First" : "Je suis passionnée par les algorithmes de communication au sens large, qu'ils soient informatiques, linguistiques, verbaux et non verbaux, j'essaie de les analyser et d'en apprendre davantage. Je souhaite transformer cette passion, notamment pour le développement informatique, en opportunité professionnelle.",
-            "bloc2Second" : "<em>Ma quête de savoir n'est jamais terminée. Chaque ligne de code est une opportunité d'apprendre et chaque défi rencontré est une chance de grandir.</em>",
-            "bloc4First" : "L'important n'est pas de tout savoir, mais d'avoir une idée du projet, de le visualiser, de l'analyser, de réfléchir à comment le réaliser et de savoir où chercher les détails et les connaissances concrètes nécessaires à sa réalisation.",
-            "bloc4Second" : "Mais surtout, il faut avoir l'humilité d'admettre que l'on ne sait pas tout, être à l'écoute des conseils, ne pas se reposer sur ses lauriers, et toujours avoir l'envie d'apprendre davantage.",
-            "bloc1Text1" : "<strong>Ce que je recherche&nbsp;:</strong><br>J'ai besoin d'un cadre et d'un mentorat pour apprendre à partir d'expériences et de connaissances des professionnels du développement Web et ainsi progresser.",
-            "listItem1a" : "Je souhaite intégrer une formation qui me donnera une ligne directrice pour devenir développeuse informatique.",
-            "listItem1b" : "Je recherche également une entreprise pour me faire découvrir la réalité du métier de développeur informatique dans le cadre d’une Immersion en milieu professionnel (convention France Travail).",
-            "bloc3Text1" : "<strong>Ce que je propose&nbsp;:</strong><br>",
-            "listItem3a" : "Détermination et motivation",
-            "listItem3b" : "Rigueur et persévérance",
-            "listItem3c" : "Capacité d’analyse et sens du détail",
-            "listItem3d" : "Capacité d'apprendre de manière autonome",
-            "listItem3e" : "<em>…et surtout, une curiosité insatiable et une forte envie de progresser.</em>",
-            "skillsZone1" : "Mes acquis&nbsp;:<br><small>(à approfondir certainement)</small>",
-            "skillsText2" : "Acquises de manière autonome,<br>(encadrement probablement nécessaire)&nbsp;:",
-            "itemSkills2a" : "HTML/CSS (SASS)",
-            "itemSkills2b" : "JavaScript (Front-End)",
-            "itemSkills2c" : "Git/GitHub",
-            "prZone1" : "Mes réalisations&nbsp;:",
-            "prZone2" : "<em>C'est un peu vide, mais donnez-moi une chance, et je remplirai cette partie avec mes projets.</em>",
-            "bouton5" : "Fermer",
-            "bouton6" : "Fermer",
-            "bouton2-open" : "<em>Et encore...</em>",
-            "bouton2-close" : "<em>Retour</em>",
-            "bouton7" : "Fermer",
-            "bouton8" : "Fermer",
-            "contactBtn-open" : "<strong>Contact</strong>",
-            "contactBtn-close" : "<em>Fermer</em>",
-            "portfolio1a" : "Mon portfolio",
-            "portfolio2" : "<strong>À propos de moi.</strong><br><em>Mon voyage à travers les lignes, un bouton à la fois, un mot à la fois.<br>Un vrai défi, une rencontre enrichissante et j'ai beaucoup appris.</em>",
+            "projectsBtn": "Mes réalisations",
+            "bloc2First": "Je suis passionnée par les algorithmes de communication au sens large, qu'ils soient informatiques, linguistiques, verbaux et non verbaux, j'essaie de les analyser et d'en apprendre davantage. Je souhaite transformer cette passion, notamment pour le développement informatique, en opportunité professionnelle.",
+            "bloc2Second": "<em>Ma quête de savoir n'est jamais terminée. Chaque ligne de code est une opportunité d'apprendre et chaque défi rencontré est une chance de grandir.</em>",
+            "bloc4First": "L'important n'est pas de tout savoir, mais d'avoir une idée du projet, de le visualiser, de l'analyser, de réfléchir à comment le réaliser et de savoir où chercher les détails et les connaissances concrètes nécessaires à sa réalisation.",
+            "bloc4Second": "Mais surtout, il faut avoir l'humilité d'admettre que l'on ne sait pas tout, être à l'écoute des conseils, ne pas se reposer sur ses lauriers, et toujours avoir l'envie d'apprendre davantage.",
+            "bloc1Text1": "<strong>Ce que je recherche&nbsp;:</strong><br>J'ai besoin d'un cadre et d'un mentorat pour apprendre à partir d'expériences et de connaissances des professionnels du développement Web et ainsi progresser.",
+            "listItem1a": "Je souhaite intégrer une formation qui me donnera une ligne directrice pour devenir développeuse informatique.",
+            "listItem1b": "Je souhaite également approfondir mes acquis et apprendre davantage pour me spécialiser dans le milieu professionnel via une alternance.",
+            "bloc3Text1": "<strong>Ce que je propose&nbsp;:</strong><br>",
+            "listItem3a": "Détermination et motivation",
+            "listItem3b": "Rigueur et persévérance",
+            "listItem3c": "Capacité d’analyse et sens du détail",
+            "listItem3d": "Capacité d'apprendre de manière autonome",
+            "listItem3e": "<em>…et surtout, une curiosité insatiable et une forte envie de progresser.</em>",
+            "skillsZone1": "Mes acquis&nbsp;:",
+            "skillsText2": "(apprentissage autonome, à approfondir et encadrer)",
+            "itemSkills2a": "HTML/CSS (SASS)",
+            "itemSkills2b": "JavaScript (Front-End)&nbsp;+ React",
+            "itemSkills2c": "Git/GitHub",
+            "prZone1": "Mes réalisations&nbsp;:",
+            "prZone2": "<em>C'est un peu vide, mais donnez-moi une chance, et je remplirai cette partie avec mes projets.</em>",
+            "bouton5": "Fermer",
+            "bouton6": "Fermer",
+            "bouton2-open": "<em>Et encore...</em>",
+            "bouton2-close": "<em>Retour</em>",
+            "bouton7": "Fermer",
+            "bouton8": "Fermer",
+            "contactBtn-open": "<strong>Contact</strong>",
+            "contactBtn-close": "<em>Fermer</em>",
+            "portfolio1a": "Mon portfolio",
+            "portfolio2": "<strong>À propos de moi.</strong><br><em>Mon voyage à travers les lignes, un bouton à la fois, un mot à la fois.<br>Un vrai défi, une rencontre enrichissante et j'ai beaucoup appris.</em>",
         },
         anglais: {
             "intro-1-text": "Some facts about me...",
             "intro-2-text": "Have a good time.",
-            "bouton1" : "What I am looking for",
-            "bouton3" : "What I bring to the table",
-            "skillsBtn" : "My Skills",
+            "bouton1": "What I am looking for",
+            "bouton3": "What I bring to the table",
+            "skillsBtn": "My Skills",
             // "projectsBtn" : "My Projects, Achievements,...",
-            "projectsBtn" : "My Achievements",
-            "bloc2First" : "I have a strong interest in communication algorithms in the broadest sense, whether they are computer-based, linguistic, verbal and non-verbal, I try to analyze them and learn more. I would like to transform this passion, particularly for computer development, into a professional opportunity.",
-            "bloc2Second" : "<em>My quest for skills is never over. Each line of code is an opportunity to learn and every challenge encountered is a chance to grow.</em>",
-            "bloc4First" : "The important thing is not to know everything, but to have an idea of the project, to visualize it, to analyze it, to think about how to realize it and to know where to look for the details and concrete knowledge necessary for its realization.",
-            "bloc4Second" : "But above all, you must have the humility to admit that you do not know everything, be open to advice, not rest on your laurels, and always have the desire to learn more.",
-            "bloc1Text1" : "<strong>What I am looking for:</strong><br>I need a framework and mentorship to learn from the experiences and knowledge of web development professionals and thus progress.",
-            "listItem1a" : "I wish to join a training program that will give me a guideline to become a web developer.",
-            "listItem1b" : "I also am looking for a company to introduce me to the reality of the web developer profession as part of a Professional Immersion (supervised by France Travail).",
-            "bloc3Text1" : "<strong>What I bring to the table:</strong><br>",
-            "listItem3a" : "Determination and motivation",
-            "listItem3b" : "Rigor and perseverance",
-            "listItem3c" : "Analytical ability and attention to detail",
-            "listItem3d" : "Ability to learn independently",
-            "listItem3e" : "<em>...and above all, an insatiable curiosity and a strong desire to progress.</em>",
-            "skillsZone1" : "My Acquired Skills:<br><small>(certainly should be deepened)</small>",
-            "skillsText2" : "Self-taught<br>(likely requires guidance):",
-            "itemSkills2a" : "HTML/CSS (SASS)",
-            "itemSkills2b" : "JavaScript (Front-End)",
-            "itemSkills2c" : "Git/GitHub",
-            "prZone1" : "My Achievements:",
-            "prZone2" : "<em>It's a bit empty, but give me a chance, and I will fill this section with my projects.</em>",
-            "bouton5" : "Close",
-            "bouton6" : "Close",
-            "bouton2-open" : "<em>And also...</em>",
-            "bouton2-close" : "<em>Back</em>",
-            "bouton7" : "Close",
-            "bouton8" : "Close",
-            "contactBtn-open" : "<strong>Contact</strong>",
-            "contactBtn-close" : "<em>Close</em>",
-            "portfolio1a" : "My Portfolio",
-            "portfolio2" : "<strong>Some facts about me.</strong><br><em>My trip through lines, one button at a time, one word at a time.<br>A real challenge, an enriching encounter and I have learned a lot.</em>"
+            "projectsBtn": "My Achievements",
+            "bloc2First": "I have a strong interest in communication algorithms in the broadest sense, whether they are computer-based, linguistic, verbal and non-verbal, I try to analyze them and learn more. I would like to transform this passion, particularly for computer development, into a professional opportunity.",
+            "bloc2Second": "<em>My quest for skills is never over. Each line of code is an opportunity to learn and every challenge encountered is a chance to grow.</em>",
+            "bloc4First": "The important thing is not to know everything, but to have an idea of the project, to visualize it, to analyze it, to think about how to realize it and to know where to look for the details and concrete knowledge necessary for its realization.",
+            "bloc4Second": "But above all, you must have the humility to admit that you do not know everything, be open to advice, not rest on your laurels, and always have the desire to learn more.",
+            "bloc1Text1": "<strong>What I am looking for:</strong><br>I need a framework and mentorship to learn from the experiences and knowledge of web development professionals and thus progress.",
+            "listItem1a": "I wish to join a training program that will give me a guideline to become a web developer.",
+            "listItem1b": "I also wish to deepen my knowledge and learn more to specialize in the professional field through an apprenticeship.",
+            "bloc3Text1": "<strong>What I bring to the table:</strong><br>",
+            "listItem3a": "Determination and motivation",
+            "listItem3b": "Rigor and perseverance",
+            "listItem3c": "Analytical ability and attention to detail",
+            "listItem3d": "Ability to learn independently",
+            "listItem3e": "<em>...and above all, an insatiable curiosity and a strong desire to progress.</em>",
+            "skillsZone1": "My Skills:",
+            "skillsText2": "(self-taught, to be further developed and supervised)",
+            "itemSkills2a": "HTML/CSS (SASS)",
+            "itemSkills2b": "JavaScript (Front-End)&nbsp;+ React",
+            "itemSkills2c": "Git/GitHub",
+            "prZone1": "My Achievements:",
+            "prZone2": "<em>It's a bit empty, but give me a chance, and I will fill this section with my projects.</em>",
+            "bouton5": "Close",
+            "bouton6": "Close",
+            "bouton2-open": "<em>And also...</em>",
+            "bouton2-close": "<em>Back</em>",
+            "bouton7": "Close",
+            "bouton8": "Close",
+            "contactBtn-open": "<strong>Contact</strong>",
+            "contactBtn-close": "<em>Close</em>",
+            "portfolio1a": "My Portfolio",
+            "portfolio2": "<strong>Some facts about me.</strong><br><em>My trip through lines, one button at a time, one word at a time.<br>A real challenge, an enriching encounter and I have learned a lot.</em>"
         }
     }
 
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bloc1Text1.className = "bloc1text1"
     let bloc3Text1 = document.createElement("p")
     bloc3Text1.className = "bloc3Text1"
-        // "List1"
+    // "List1"
     let itemsList1 = ["listItem1a", "listItem1b"]
     let list1 = document.createElement("ul")
     list1.className = "list1"
@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Assignation des éléments li aux variables
         if (i === 0) listItem1a = liFirst;
         if (i === 1) listItem1b = liFirst;
-        }
-        // "List3"
+    }
+    // "List3"
     let itemsList3 = ["listItem3a", "listItem3b", "listItem3c", "listItem3d", "listItem3e"]
     let list3 = document.createElement("ul")
     list3.className = "list3"
@@ -175,14 +175,14 @@ document.addEventListener("DOMContentLoaded", function() {
         let liThird = document.createElement("li")
         liThird.textContent = itemsList3[i]
         list3.appendChild(liThird)
-         // Assignation des éléments li aux variables
+        // Assignation des éléments li aux variables
         if (i === 0) listItem3a = liThird;
         if (i === 1) listItem3b = liThird
         if (i === 2) listItem3c = liThird;
         if (i === 3) listItem3d = liThird;
-        if (i === 4) listItem3e = liThird; 
-        }
-        // "DOM" insertion
+        if (i === 4) listItem3e = liThird;
+    }
+    // "DOM" insertion
     zoneBloc1.append(bloc1Text1, list1, zoneBouton5)
     zoneBloc3.append(bloc3Text1, list3, zoneBouton6)
 
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // "Skills"
     let skillsText2 = document.createElement("p")
     skillsText2.className = "skillsText2"
-        // "SkillsList2"
+    // "SkillsList2"
     let itemSkills2 = ["itemSkills2a", "itemSkills2b", "itemSkills2c"]
     let skillsList2 = document.createElement("ul")
     skillsList2.className = "skillsList2"
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (i === 1) itemSkills2b = liSkills2
         if (i === 2) itemSkills2c = liSkills2
     }
-        // "DOM" insertion
+    // "DOM" insertion
     skillsZone2.append(skillsText2, skillsList2)
 
     // "Projects"
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
     portfolio2.querySelector(".portfolio2")
     prZone3.append(portfolio1, portfolio2)
     portfolio1.append(portfolio1a, portfolio1b)
-    
+
     // "footer"
     let myGitHub = document.createElement("a")
     myGitHub.href = "https://github.com/jamniz"
@@ -261,24 +261,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // "bouton1/bouton5"
     zoneBloc1.classList.add("zoneBloc1-close")
-    bouton1.addEventListener("click", function() {
+    bouton1.addEventListener("click", function () {
         zoneBloc1.classList.remove("zoneBloc1-close")
         zoneBloc1.classList.add("zoneBloc1-open")
-        zoneBloc1.scrollIntoView({behavior: "smooth"})
+        zoneBloc1.scrollIntoView({ behavior: "smooth" })
     })
-    bouton5.addEventListener("click", function() {
+    bouton5.addEventListener("click", function () {
         zoneBloc1.classList.remove("zoneBloc1-open")
         zoneBloc1.classList.add("zoneBloc1-close")
     })
 
     // "bouton3/bouton6"
     zoneBloc3.classList.add("zoneBloc3-close")
-    bouton3.addEventListener("click", function() {
+    bouton3.addEventListener("click", function () {
         zoneBloc3.classList.remove("zoneBloc3-close")
         zoneBloc3.classList.add("zoneBloc3-open")
-        zoneBloc3.scrollIntoView({behavior: "smooth"})
+        zoneBloc3.scrollIntoView({ behavior: "smooth" })
     })
-    bouton6.addEventListener("click", function() {
+    bouton6.addEventListener("click", function () {
         zoneBloc3.classList.remove("zoneBloc1-open")
         zoneBloc3.classList.add("zoneBloc3-close")
     })
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         majTexteBouton(bouton2, etatBouton2, "bouton2-open", "bouton2-close")
     })
-    document.getElementById("toggleBtn2").addEventListener("change", function() {
+    document.getElementById("toggleBtn2").addEventListener("change", function () {
         etatBouton2 = this.checked
         majTexteBouton(bouton2, etatBouton2, "bouton2-open", "bouton2-close")
     })
@@ -311,24 +311,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // "skillsBtn/bouton7"
     skills.classList.add("skills-close")
-    skillsBtn.addEventListener("click", function() {
+    skillsBtn.addEventListener("click", function () {
         skills.classList.remove("skills-close")
         skills.classList.add("skills-open")
-        skills.scrollIntoView({behavior: "smooth"})
+        skills.scrollIntoView({ behavior: "smooth" })
     })
-    bouton7.addEventListener("click", function() {
+    bouton7.addEventListener("click", function () {
         skills.classList.remove("skills-open")
         skills.classList.add("skills-close")
     })
 
     // "projectsBtn/bouton8"
     projects.classList.add("projects-close")
-    projectsBtn.addEventListener("click", function() {
+    projectsBtn.addEventListener("click", function () {
         projects.classList.remove("projects-close")
         projects.classList.add("projects-open")
-        projects.scrollIntoView({behavior: "smooth"})
+        projects.scrollIntoView({ behavior: "smooth" })
     })
-    bouton8.addEventListener("click", function() {
+    bouton8.addEventListener("click", function () {
         projects.classList.remove("projects-open")
         projects.classList.add("projects-close")
     })
@@ -339,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     majTexteBouton(contactBtn, etatContactBtn, "contactBtn-open", "contactBtn-close")
 
-    contactBtn.addEventListener("click", function() {
+    contactBtn.addEventListener("click", function () {
         let langue = document.getElementById("langue").value
         etatContactBtn = !etatContactBtn
         if (etatContactBtn != false) {
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         majTexteBouton(contactBtn, etatContactBtn, "contactBtn-open", "contactBtn-close")
     })
-    document.getElementById("toggleContactBtn").addEventListener("change", function() {
+    document.getElementById("toggleContactBtn").addEventListener("change", function () {
         etatContactBtn = this.checked
         majTexteBouton(contactBtn, etatContactBtn, "contactBtn-open", "contactBtn-close")
     })
@@ -383,9 +383,9 @@ document.addEventListener("DOMContentLoaded", function() {
             listItem3d.textContent = traductions[langue]["listItem3d"]
             listItem3e.innerHTML = traductions[langue]["listItem3e"]
             skillsZone1.innerHTML = traductions[langue]["skillsZone1"]
-            skillsText2.innerHTML = traductions[langue]["skillsText2"]
+            skillsText2.textContent = traductions[langue]["skillsText2"]
             itemSkills2a.textContent = traductions[langue]["itemSkills2a"]
-            itemSkills2b.textContent = traductions[langue]["itemSkills2b"]
+            itemSkills2b.innerHTML = traductions[langue]["itemSkills2b"]
             itemSkills2c.textContent = traductions[langue]["itemSkills2c"]
             prZone1.innerHTML = traductions[langue]["prZone1"]
             prZone2.innerHTML = traductions[langue]["prZone2"]
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function() {
             portfolio1a.textContent = traductions[langue]["portfolio1a"]
             portfolio2.innerHTML = traductions[langue]["portfolio2"]
         } else {
-            console.error("Langue non supportée")  
+            console.error("Langue non supportée")
         }
     }
 
