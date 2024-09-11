@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "bouton8": "Fermer",
             "contactBtn-open": "<strong>Contact</strong>",
             "contactBtn-close": "<em>Fermer</em>",
-            "portfolio1a": "Mon portfolio",
+            "portfolio1a": "Présentation",
             "portfolio2": "<strong>À propos de moi.</strong><br><em>Mon voyage à travers les lignes, un bouton à la fois, un mot à la fois.<br>Un vrai défi, une rencontre enrichissante et j'ai beaucoup appris.</em>",
         },
         anglais: {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "bouton8": "Close",
             "contactBtn-open": "<strong>Contact</strong>",
             "contactBtn-close": "<em>Close</em>",
-            "portfolio1a": "My Portfolio",
+            "portfolio1a": "Presentation",
             "portfolio2": "<strong>Some facts about me.</strong><br><em>My trip through lines, one button at a time, one word at a time.<br>A real challenge, an enriching encounter and I have learned a lot.</em>"
         }
     }
@@ -212,10 +212,10 @@ document.addEventListener("DOMContentLoaded", function () {
     portfolio1.className = "portfolio1"
     portfolio1.querySelector(".portfolio1")
     let portfolio1a = document.createElement("a")
-    portfolio1a.href = ""
+    portfolio1a.href = "https://github.com/jamniz/About-Me"
     portfolio1a.target = "_blanc"
     portfolio1a.rel = "noopener noreferrer"
-    portfolio1a.title = "Mon portfolio"
+    portfolio1a.title = "About Me"
     portfolio1a.className = "portfolio1a"
     portfolio1a.querySelector(".portfolio1a")
     let portfolio1b = document.createElement("p")
