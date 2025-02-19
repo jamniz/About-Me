@@ -5,94 +5,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me (@jamniz)</title>
+    <link rel="shortcut icon" type="icon" href="pictures/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Dosis:wght@200..800&family=Kalam&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/minireset.css">
-    <link rel="stylesheet" href="styles/portfolio5.css">
-    <script src="scripts/portfolio5.js" defer></script>
+    <script src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
     <header>
-        <div class="navZone1"></div>
         <div class="selectBtn">
             <select id="langue" name="langue">
                 <option value="francais">Français</option>
                 <option value="anglais">English</option>
             </select>
         </div>
+        <div class="intro-zone" id="intro-zone">
+            <p class="intro1" id="intro1-texte"></p>
+            <p class="intro2" id="intro2-texte"></p>
+        </div>
     </header>
-    <nav class="navZone" id="navZone">
-        <!-- <div class="navZone1"></div> -->
-        <div class="navZone2">
-            <div class="zoneBouton1">
-                <input type="checkbox" class="toggleBtn1" id="toggleBtn1">
-                <label for="toggleBtn1" class="bouton1">bouton1</label>
-            </div>
-            <div class="zoneBouton3">
-                <input type="checkbox" class="toggleBtn3" id="toggleBtn3">
-                <label for="toggleBtn3" class="bouton3">bouton3</label>
-            </div>
-            <div class="zoneSkillsBtn">
-                <input type="checkbox" class="toggleSkillsBtn" id="toggleSkillsBtn">
-                <label for="toggleSkillsBtn" class="skillsBtn">skillsBtn</label>
-            </div>
-            <div class="zonePrBtn">
-                <input type="checkbox" class="togglePrBtn" id="togglePrBtn">
-                <label for="togglePrBtn" class="projectsBtn">projectsBtn</label>
-            </div>
+    <div class="badgesGCC">
+        <div class="badge-data">
+            <img src="pictures/GCC_data2.png" alt="Badge Google Data Analytics" title="Badge Google Data Analytics"
+                class="data-badge">
+        </div>
+        <div class="badge-cyber">
+            <img src="pictures/GCC_cyber2.png" alt="Badge Cybersecurity Google" title="Badge Cybersecurity Google"
+                class="cyber-badge">
+        </div>
+    </div>
+    <nav>
+        <div class="zoneBouton1">
+            <input type="checkbox" class="toggleBtn1" id="toggleBtn1">
+            <label for="toggleBtn1" class="bouton1">bouton1</label>
+        </div>
+        <div class="zoneBouton3">
+            <input type="checkbox" class="toggleBtn3" id="toggleBtn3">
+            <label for="toggleBtn3" class="bouton3">bouton3</label>
+        </div>
+        <div class="zonePrBtn">
+            <input type="checkbox" class="togglePrBtn" id="togglePrBtn">
+            <label for="togglePrBtn" class="projectsBtn">projectsBtn</label>
         </div>
     </nav>
-    <aside class="asideZone" id="asideZone">
-        <div class="zoneBloc2"></div>
-        <div class="zoneBouton2">
-            <input type="checkbox" class="toggleBtn2" id="toggleBtn2">
-            <label for="toggleBtn2" class="bouton2">bouton2</label>
+    <aside>
+        <div class="aside-zone">
+            <div class="zoneBloc2">
+                <p class="bloc2First"></p>
+                <p class="bloc2Second"></p>
+            </div>
+            <div class="zoneBouton2">
+                <input type="checkbox" class="toggleBtn2" id="toggleBtn2">
+                <label for="toggleBtn2" class="bouton2">bouton2</label>
+            </div>
+            <div class="zoneBloc4">
+                <p class="bloc4First"></p>
+                <p class="bloc4Second"></p>
+            </div>
         </div>
-        <div class="zoneBloc4"></div>
+        <div class="dev">
+            <p id="dev-domaine"></p>
+            <ul>
+                <li id="skills1"></li>
+                <li id="skills2"></li>
+                <li id="skills3"></li>
+            </ul>
+            <p id="notions"></p>
+            <ul>
+                <li id="skills4"></li>
+                <li id="skills5"></li>
+            </ul>
+        </div>
+        <div class="cyber">
+            <p id="cyber-domaine"></p>
+            <ul>
+                <li id="skills6"></li>
+                <li id="skills7"></li>
+                <li id="skills8"></li>
+                <li id="skills9"></li>
+                <li id="skills10"></li>
+            </ul>
+        </div>
+        <div class="data">
+            <p id="data-domaine"></p>
+            <ul>
+                <li id="skills11"></li>
+                <li id="skills12"></li>
+            </ul>
+        </div>
     </aside>
-    <main class="mainZone" id="mainZone">
-        <div class="zoneBloc1">
+    <main>
+        <div class="bloc1-zone">
+            <p class="text-bloc1"></p>
+            <ul class="list-bloc1">
+                <li id="item1-bloc1"></li>
+                <li id="item2-bloc1"></li>
+            </ul>
             <div class="zoneBouton5">
                 <input type="checkbox" class="toggleBtn5" id="toggleBtn5">
                 <label for="toggleBtn5" class="bouton5">bouton5</label>
             </div>
         </div>
-        <div class="zoneBloc3">
+        <div class="bloc3-zone">
+            <p class="text-bloc3"></p>
+            <ul class="list-bloc3">
+                <li id="item1-bloc3"></li>
+                <li id="item2-bloc3"></li>
+                <li id="item3-bloc3"></li>
+                <li id="item4-bloc3"></li>
+                <li id="item5-bloc3"></li>
+            </ul>
             <div class="zoneBouton6">
                 <input type="checkbox" class="toggleBtn6" id="toggleBtn6">
                 <label for="toggleBtn6" class="bouton6">bouton6</label>
             </div>
         </div>
-        <div class="zoneDevImg"></div>
     </main>
-    <div class="skills" id="skills">
-        <div class="skillsZone1"></div>
-        <div class="skillsZone2"></div>
-        <!-- <div class="skillsZone3">skillsZone3</div> -->
-        <div class="zoneBouton7">
-            <input type="checkbox" class="toggleBouton7" id="toggleBouton7">
-            <label for="toggleBouton7" class="bouton7">bouton7</label>
+    <div class="portfolio">
+        <div class="portfolio-1">
+            <div class="zone-portfolio1-btn">
+                <input type="checkbox" class="toggleWebBtn" id="toggleWebBtn">
+                <label for="toggleWebBtn" class="webBtn">webBtn</label>
+            </div>
+            <div class="portfolio1-content">
+                <div class="porfolio1-projet1">
+                    <div class="about-me-pr">
+                        <a href="https://github.com/jamniz/About-Me" title="About Me" target="_blank"
+                            rel="noopener noreferer" id="pr-about-me">Présentation</a>
+                    </div>
+                    <div class="webPr1-text1">HTML/CSS(SCSS)/JS<br><em><small>(no framework)</small></em></div>
+                    <div class="webPr1-text2" id="webPr1-text2">webPr1-text2</div>
+                </div>
+                <!-- <div class="porfolio1-projet2"> ***authorisation - demande en cours***
+                    <div class="duoday">
+                        <a href="https://github.com/jamniz/Duoday" title="Mon DuoDay" target="_blank"
+                            rel="noopener noreferer" id="pr-duoday">Mon DuoDay</a>
+                    </div>
+                    <div class="webPr2-text1"><strong>Prise en main DSFR</strong></div>
+                    <div class="webPr2-text2"><em>Merci à ANFSI/SPWSI<br>& Gendarme M. LOMMERE</em></div>
+                </div> -->
+                <div class="portfolio1-note">
+                    <p class="text-note" id="text-note"></p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-2">
+            <div class="zone-portfolio2-btn">
+                <input type="checkbox" class="toggleCyberBtn" id="toggleCyberBtn">
+                <label for="toggleCyberBtn" class="cyberBtn">cyberBtn</label>
+            </div>
+            <div class="portfolio2-content">
+                <div class="google-cyber">
+                    <img src="pictures/GCC_cyber2.png" alt="Badge Google Career Certificat - Cybersécurité"
+                        class="img-gcc-cyber" title="Google Career Certificat - Cybersécurité">
+                    <div class="google-cyber-content">
+                        <p class="cyber-text1">cyber-text1</p>
+                        <p class="cyber-text2">cyber-text2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-3">
+            <div class="zone-portfolio3-btn">
+                <input type="checkbox" class="toggleDataBtn" id="toggleDataBtn">
+                <label for="toggleDataBtn" class="dataBtn">dataBtn</label>
+            </div>
+            <div class="portfolio3-content">
+                <div class="google-data">
+                    <img src="pictures/GCC_data2.png" alt="Badge Google Career Certificat - Data Analytics"
+                        class="img-gcc-data" title="Google Career Certificat - Data Analytics">
+                    <div class="google-data-content">
+                        <p class="data-text1">data-text1</p>
+                        <p class="data-text2">data-text2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zoneClosePrBtn">
+            <input type="checkbox" class="toggleClosePrBtn" id="toggleClosePrBtn">
+            <label for="toggleClosePrBtn" class="closePrBtn">closePrBtn</label>
         </div>
     </div>
-    <div class="projects" id="projects">
-        <div class="prZone1"></div>
-        <div class="prZone2"></div>
-        <div class="prZone3"></div>
-        <div class="zoneBouton8">
-            <input type="checkbox" class="toggleBouton8" id="toggleBouton8">
-            <label for="toggleBouton8" class="bouton8">bouton8</label>
-        </div>
+    <div class="zoneDevImg">
+        <img src="pictures/Dev4bia.png" class="devImg" alt="">
     </div>
-    <footer class="footerZone" id="footerZone">
+    <footer>
+        <!-- <div class="footer-zone1"> -->
         <div class="zoneContactBtn">
             <input type="checkbox" id="toggleContactBtn" class="toggleContactBtn">
             <label for="toggleContactBtn" class="contactBtn">contactBtn</label>
         </div>
-        <div class="zoneMyself"></div>
+        <div class="zoneMyself">
+            <div class="myGitHub">
+                <a href="https://github.com/jamniz" target="_blank" rel="noopener noreferer"
+                    title="Mon espace GitHub">@jamniz (GitHub)</a>
+            </div>
+            <div class="place">
+                <p class="myPlace"><em>France, IdF, Hauts-de-Seine</em></p>
+            </div>
+            <div class="myMail">
+                <a href="mailto:jamniz@outlook.com">jamniz@outlook.com</a>
+            </div>
+            <div class="myLinkedIn">
+                <a href="https://www.linkedin.com/in/zuzana-duprat/" target="_blank" rel="noopener noreferer"
+                    title="LinkedIn"><img class="imgIn" src="pictures/linkedin.png" alt="Logo-link LinkedIn"></a>
+            </div>
+
+        </div>
+        <!-- </div> -->
     </footer>
 </body>
 

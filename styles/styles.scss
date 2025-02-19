@@ -1,0 +1,850 @@
+//  Fonts : 
+$ff1: "Dosis", Helvetica, Arial, sans-serif; // texte boutons 
+$ff2: "Kalam", Helvetica, Arial, sans-serif; // texte 'title'
+$ff3: "Catamaran", Helvetica, Arial, sans-serif; // texte de base
+
+// Couleurs :
+$clr-font: #030376;
+$clr1: #666666;
+$clr2: #000000;
+$clr3: #4d4d4d;
+$clr4: #cce0ff;
+$clr5: #97baff;
+$cbtn1: rgba(255, 255, 255, 0.1);
+$cbtn1b: rgba(255, 255, 255, 0.2);
+$bc-btn: rgba(255, 255, 255, 0.3);
+$bc-btn3: rgba(153, 187, 255, 0.9);
+$bc-btn4: rgba(153, 187, 255, 0.3);
+$bc-btn5: rgba(51, 119, 255, 0.3);
+$bc-btn6: #e8eef7;
+$bc-btn7: #c6d5eb;
+$bc-btn8: #d9e3f2;
+$c-grad1: #e6f0ff;
+$c-grad2: #6699ff;
+$c-grad3: #022975;
+$select: #80aaff;
+$shadow1: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+$shadow2: rgba(0, 0, 102, 0.56) 0px 22px 70px 4px;
+$shadow4: rgba(0, 0, 102, 0.1) 0px 0px 25px 15px inset;
+
+// breakpoints
+$small: 480px;
+$width2: 768px;
+$width3: 1024px;
+$width4: 1224px;
+$width5: 1824px;
+
+// Variables
+$column-width: 20vw;
+$navbar-width: 2*$column-width;
+$navbar-width2: 1.4*$column-width;
+
+// Mixin pour les liens
+@mixin link-style($clr-font) {
+    color: $clr-font;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bolder;
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+@mixin imageHoverEffect($scale) {
+    &:hover {
+        transform: scale($scale);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+body {
+    background: linear-gradient(to bottom, $c-grad1 0%, $c-grad2 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: $ff3;
+    color: $clr-font;
+    margin: 2% 6%;
+
+    display: grid;
+    grid-template-rows: repeat(6, max-content);
+    grid-template-columns: repeat(5, 1fr);
+
+    @media screen and (min-width: $small) {
+        grid-template-rows: repeat(5, max-content);
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+}
+
+header {
+    grid-column: 2/6;
+    grid-row: 1/2;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    // margin-bottom: 3%;
+
+    .selectBtn {
+        text-align: right;
+        padding: 2% 0;
+        margin-right: 2%;
+        grid-row: 1/2;
+
+        select {
+            border: none;
+            border-radius: 15px;
+            background-color: $select;
+            color: $clr-font;
+            padding: 0.8vw 1.2vw;
+        }
+    }
+
+    .intro-zone {
+        grid-row: 2/3;
+        display: block;
+        font-family: $ff2;
+        opacity: 0.5;
+        text-align: center;
+        margin: 2%;
+
+        .intro1 {
+            font-size: 2.6vw;
+
+            @media screen and (min-width: $small) {
+                font-size: 2.2vw;
+            }
+        }
+
+        .intro2 {
+            font-size: 2.2vw;
+
+            @media screen and (min-width: $small) {
+                font-size: 1.8vw;
+            }
+        }
+    }
+}
+
+nav {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: $navbar-width;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 2vw 3vw;
+
+    @media screen and (min-width: $small) {
+        width: $navbar-width2;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2vw 3vw 2vw 0;
+    }
+
+    .zoneBouton1 {
+        @media screen and (min-width: $small) {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+
+    .zoneBouton3 {
+        @media screen and (min-width: $small) {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+    }
+
+    .zonePrBtn {
+        @media screen and (min-width: $small) {
+            grid-column: 3/4;
+            grid-row: 1/2;
+        }
+    }
+
+    .zoneBouton1,
+    .zoneBouton3,
+    .zonePrBtn {
+        justify-self: center;
+        align-self: center;
+        padding: 1%;
+        margin: 1.4vw 0;
+    }
+}
+
+aside {
+    grid-column: 1/6;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: repeat(3, max-content);
+
+    @media screen and (min-width: $small) {
+        grid-column: 2/6;
+        grid-row: 2/3;
+        grid-template-columns: subgrid;
+        grid-template-rows: repeat(2, max-content);
+    }
+}
+
+.aside-zone {
+    grid-column: 1/3;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+    padding: 20% 10%;
+
+    @media screen and (min-width: $small) {
+        grid-column: 3/5;
+        grid-row: 1/2;
+        padding: 8% 5%;
+    }
+}
+
+.zoneBouton2 {
+    margin: 3% auto;
+
+    @media screen and (min-width: $small) {
+        margin: 2% auto;
+    }
+}
+
+.bloc2First,
+.bloc2Second,
+.bloc4First,
+.bloc4Second {
+    font-size: 2.2vw;
+    opacity: 0.5;
+
+    @media screen and (min-width: $small) and (max-width: $width2) {
+        font-size: 1.8vw;
+    }
+
+    @media screen and (min-width: $width2) and (max-width: $width3) {
+        font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width5) {
+        font-size: 1.3vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 1.2vw;
+    }
+}
+
+.dev,
+.cyber,
+.data {
+    grid-column: 3/6;
+    display: block;
+    font-size: 2.2vw;
+    margin: 2% 2% 2% 0;
+    padding: 3vw;
+
+    @media screen and (min-width: $small) and (max-width: $width2) {
+        font-size: 2.1vw;
+    }
+
+    @media screen and (min-width: $width2) and (max-width: $width3) {
+        font-size: 1.7vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1.5vw;
+    }
+
+    @media screen and (min-width: $width4) {
+        font-size: 1.3vw;
+    }
+}
+
+.dev {
+    grid-row: 1/2;
+
+    @media screen and (min-width: $small) {
+        grid-column: 1/3;
+    }
+}
+
+.cyber {
+    grid-row: 2/3;
+
+    @media screen and (min-width: $small) {
+        grid-column: 1/3;
+    }
+}
+
+.data {
+    grid-row: 3/4;
+
+    @media screen and (min-width: $small) {
+        grid-column: 3/5;
+        grid-row: 2/3;
+    }
+}
+
+.badgesGCC {
+    display: none;
+
+    @media screen and (min-width: $small) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 4%;
+        padding-left: 6vw;
+    }
+}
+
+.cyber-badge,
+.data-badge {
+    width: 60%;
+    @include imageHoverEffect(1.7)
+}
+
+main {
+    grid-column: 1/6;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+}
+
+// Styles spécifiques aux actions des boutons
+.zoneBloc1-open,
+.zoneBloc3-open {
+    display: block;
+    background-color: $cbtn1;
+    border-radius: 3%;
+    box-shadow: $shadow2;
+    padding: 2.5vw;
+    margin: 3vw auto;
+    width: 80%;
+    font-size: 2.4vw;
+
+    @media screen and (min-width: $small) and (max-width: $width2) {
+        font-size: 2vw;
+        width: 70%;
+    }
+
+    @media screen and (min-width: $width2) and (max-width: $width3) {
+        font-size: 1.8vw;
+        width: 65%;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1.6vw;
+        width: 60%;
+    }
+
+    @media screen and (min-width: $width4) {
+        font-size: 1.4vw;
+        width: 55%;
+    }
+}
+
+.zoneBloc1-close,
+.zoneBloc3-close {
+    display: none;
+}
+
+.zoneBouton1-hidden,
+.zoneBouton3-hidden,
+.zonePrBtn-hidden {
+    display: none;
+}
+
+.zoneBouton1-open,
+.zoneBouton3-open,
+.zonePrBtn-open {
+    display: block;
+}
+
+.zoneBouton5,
+.zoneBouton6 {
+    margin: 2%;
+    text-align: right;
+}
+
+
+.portfolio-open {
+    grid-column: 1/6;
+    grid-row: 4/5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+
+.zoneClosePrBtn {
+    align-self: flex-end;
+}
+
+.portfolio-1,
+.portfolio-2,
+.portfolio-3 {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-shrink: 0;
+    justify-content: space-around;
+}
+
+.zoneClosePrBtn {
+    &.open {
+        display: block;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.portfolio-2,
+.portfolio-3 {
+    max-width: 30%;
+
+    @media screen and (min-width: $small) {
+        max-width: 30%;
+    }
+}
+
+.portfolio1-content,
+.portfolio2-content,
+.portfolio3-content,
+.portfolio1-content-open,
+.portfolio2-content-open,
+.portfolio3-content-open {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-around;
+    padding-bottom: 3%;
+}
+
+.portfolio-close,
+.portfolio1-content-close,
+.portfolio2-content-close,
+.portfolio3-content-close {
+    display: none;
+}
+
+.porfolio1-projet1,
+.porfolio1-projet2,
+.portfolio1-note,
+.google-cyber,
+.google-data {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: content;
+    justify-content: space-evenly;
+    // gap: 5%;
+}
+
+.portfolio1-note {
+    display: inline-block;
+    max-width: 35%;
+    padding: 4vw 2vw;
+    font-size: 1.8vw;
+    line-height: 1.3;
+    opacity: 0.6;
+
+    @media screen and (min-width: $width2) and (max-width: $width4) {
+        font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width4) {
+        font-size: 1.2vw;
+    }
+}
+
+.porfolio1-projet1,
+.porfolio1-projet2,
+.google-cyber,
+.google-data {
+    display: block;
+    border-radius: 8%;
+    box-shadow: $shadow4;
+    padding: 1vw 2vw;
+    margin: 2%;
+}
+
+.zone-portfolio1-btn,
+.zone-portfolio2-btn,
+.zone-portfolio3-btn,
+.zone-portfolio-btn {
+    margin: 5% auto;
+}
+
+.about-me-pr,
+.duoday {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn4;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0.6vw 2.8vw;
+    margin: 2vw auto;
+    font-size: 2.2vw;
+
+    a {
+        @include link-style($clr-font);
+    }
+
+    @media screen and (min-width: $small) {
+        font-size: 1.4vw;
+    }
+}
+
+.webPr1-text1,
+.webPr2-text2 {
+    opacity: 0.5;
+    font-size: 1.8vw;
+    line-height: 0.9;
+    padding: 0 1vw;
+
+    @media screen and (min-width: $small) {
+        font-size: 1vw;
+    }
+}
+
+.webPr1-text2,
+.webPr2-text1 {
+    padding: 0.6vw 1vw;
+    font-size: 1.8vw;
+    line-height: 1.2;
+
+    @media screen and (min-width: $small) {
+        font-size: 1vw;
+    }
+}
+
+.google-cyber,
+.google-data {
+    display: grid;
+    grid-template-columns: fit-content(20vw) fit-content(40vw);
+    grid-template-rows: max-content;
+    padding: 2vw;
+    max-width: 95%;
+
+    @media screen and (min-width: $small) {
+        grid-template-columns: repeat(2, fit-content(35vw));
+    }
+}
+
+.img-gcc-cyber,
+.img-gcc-data {
+    width: 90%;
+    @include imageHoverEffect(2.5);
+
+    @media screen and (min-width: $small) {
+        @include imageHoverEffect(2);
+    }
+}
+
+.cyber-text1,
+.data-text1 {
+    font-size: 1.8vw;
+    line-height: 1.3;
+
+    @media screen and (min-width: $small) {
+        font-size: 1.4vw;
+    }
+}
+
+.cyber-text2,
+.data-text2 {
+    font-size: 1.4vw;
+    line-height: 1.2;
+    padding-top: 2vw;
+    opacity: 0.5;
+
+    @media screen and (min-width: $small) {
+        font-size: 1vw;
+    }
+}
+
+.zoneDevImg {
+    grid-column: 1/6;
+    grid-row: 5/6;
+
+    .devImg {
+        display: block;
+        width: 55%;
+        height: auto;
+        margin: 4vw auto 2vw;
+        filter: drop-shadow(0px 0px 70px $c-grad3);
+        border-radius: 10%;
+    }
+
+    @media screen and (min-width: $small) {
+        grid-column: 3/6;
+        // grid-row: 7/8;
+        margin: 4vw auto;
+    }
+}
+
+
+footer {
+    grid-column: 1/6;
+    grid-row: 6/7;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    margin: 5% 0 3%;
+
+    @media screen and (min-width: $small) {
+        grid-column: 1/3;
+        grid-row: 5/6;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+// .zoneMyself,
+.zoneMyself-open {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    text-align: center;
+    font-size: 2.2vw;
+
+    a {
+        @include link-style($clr-font);
+    }
+
+    @media screen and (min-width: $small) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.2vw;
+    }
+
+    .myGitHub {
+        border-radius: 25px;
+        box-shadow: $shadow1;
+        background-color: $bc-btn4;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        padding: 0.6vw 2.8vw;
+        margin: 2% 30%;
+
+        @media screen and (max-width: $small) {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            margin: 3%;
+        }
+    }
+
+    .place {
+        opacity: 0.6;
+
+        &>p {
+            padding: 5% 0;
+        }
+
+        @media screen and (max-width: $small) {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    }
+
+    .myMail {
+        &>a {
+            padding-top: 10%;
+        }
+
+        @media screen and (max-width: $small) {
+            grid-column: 2/3;
+            grid-row: 3/4;
+        }
+    }
+
+    .myLinkedIn {
+        @media screen and (max-width: $small) {
+            grid-column: 3/4;
+            grid-row: 3/4;
+        }
+    }
+
+    .imgIn {
+        width: 30%;
+        @include imageHoverEffect(1.3);
+
+        @media screen and (min-width: $small) {
+            width: 20%;
+        }
+    }
+}
+
+.contactBtn {
+    margin: 0 0 5% 6%;
+
+    @media screen and (min-width: $small) {
+        margin: 0 0 10% 15%
+    }
+}
+
+.zoneMyself-close {
+    display: none;
+}
+
+// Styles spécifiques aux actions des boutons
+.zoneBloc2-open,
+.zoneBloc4-open {
+    display: block;
+    padding: 2vw;
+}
+
+.zoneBloc2-close,
+.zoneBloc4-close {
+    display: none;
+}
+
+
+
+// BOUTONS
+.toggleBtn1,
+.toggleBtn2,
+.toggleBtn3,
+.toggleBtn5,
+.toggleBtn6,
+.togglePrBtn,
+.toggleContactBtn,
+.toggleWebBtn,
+.toggleCyberBtn,
+.toggleDataBtn,
+.toggleClosePrBtn {
+    position: absolute;
+    left: -9999px;
+}
+
+.bouton1,
+.bouton3,
+.projectsBtn,
+.contactBtn,
+.webBtn,
+.cyberBtn,
+.dataBtn {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.bouton1,
+.bouton3,
+.projectsBtn {
+    background-color: $bc-btn8;
+    border: solid 0.8px $c-grad2;
+
+    @media screen and (min-width: $small) {
+        border: solid 1.2px $c-grad2;
+    }
+}
+
+.bouton5,
+.bouton6,
+.bouton2,
+.closePrBtn {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    background-color: $bc-btn4;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.bouton1,
+.bouton2,
+.bouton3,
+.bouton5,
+.bouton6,
+.projectsBtn,
+.contactBtn,
+.webBtn,
+.cyberBtn,
+.dataBtn,
+.closePrBtn {
+    padding: 0.6vw 2.6vw;
+    font-family: $ff1;
+    font-size: 2.4vw;
+
+    @media screen and (min-width: $small) {
+        font-size: 1.6vw;
+    }
+}
+
+.bouton2,
+.bouton5,
+.bouton6 {
+    font-size: 2vw;
+
+    @media screen and (min-width: $small) {
+        font-size: 1.2vw;
+    }
+}
+
+.bouton1:hover,
+.bouton3:hover,
+.projectsBtn:hover {
+    box-shadow: $shadow2;
+    background-color: $clr5;
+}
+
+.bouton2:hover,
+.contactBtn:hover,
+.webBtn:hover,
+.cyberBtn:hover,
+.dataBtn:hover {
+    box-shadow: $shadow2;
+    background-color: $bc-btn3;
+}
+
+.bouton5:hover,
+.bouton6:hover,
+.closePrBtn:hover {
+    background-color: $bc-btn5;
+}
+
+.bouton1:active,
+.bouton3:active,
+.projectsBtn:active,
+.bouton2:active,
+.contactBtn:active,
+.webBtn:active,
+.cyberBtn:active,
+.dataBtn:active,
+.bouton5:active,
+.bouton6:active,
+.closePrBtn:active {
+    background-color: $bc-btn4;
+    border: solid 1.5px $c-grad3;
+
+    @media screen and (min-width: $small) {
+        border: solid 2px $c-grad3;
+    }
+}
