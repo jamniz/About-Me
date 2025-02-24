@@ -185,10 +185,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Mettre à jour le texte des boutons
-    function miseAJourTexteBouton(element, etat, openKey, closeKey) {
-        let langue = document.getElementById("langue").value;
-        element.textContent = etat ? traductions[langue][closeKey] : traductions[langue][openKey];
-    }
+    // function miseAJourTexteBouton(element, etat, openKey, closeKey) {
+    //     let langue = document.getElementById("langue").value;
+    //     element.textContent = etat ? traductions[langue][closeKey] : traductions[langue][openKey];
+    // }
     function majTexteBouton(element, etat, openKey, closeKey) {
         let langue = document.getElementById("langue").value;
         element.innerHTML = etat ? traductions[langue][closeKey] : traductions[langue][openKey];

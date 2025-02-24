@@ -1,3 +1,25 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.portfolio-1,
+.portfolio-2,
+.portfolio-3 {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+}
+
+.portfolio1-content-open,
+.portfolio2-content-open,
+.portfolio3-content-open, .portfolio-open {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 body {
   background: linear-gradient(to bottom, #e6f0ff 0%, #6699ff 100%);
   background-attachment: fixed;
@@ -10,7 +32,13 @@ body {
   grid-template-rows: repeat(6, max-content);
   grid-template-columns: repeat(5, 1fr);
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  body {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, max-content);
+  }
+}
+@media screen and (min-width: 768px) {
   body {
     grid-template-rows: repeat(5, max-content);
     grid-template-columns: repeat(5, 1fr);
@@ -29,11 +57,24 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, max-content);
 }
+@media screen and (max-width: 480px) {
+  header {
+    grid-column: 1/6;
+    grid-row: 2/3;
+    position: relative;
+    margin-top: 10%;
+  }
+}
 header .selectBtn {
   text-align: right;
   padding: 2% 0;
   margin-right: 2%;
   grid-row: 1/2;
+}
+@media screen and (max-width: 480px) {
+  header .selectBtn {
+    margin-top: 4%;
+  }
 }
 header .selectBtn select {
   border: none;
@@ -53,33 +94,57 @@ header .intro-zone {
 header .intro-zone .intro1 {
   font-size: 2.6vw;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  header .intro-zone .intro1 {
+    font-size: 3.6vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
   header .intro-zone .intro1 {
     font-size: 2.2vw;
+  }
+}
+@media screen and (min-width: 1224px) {
+  header .intro-zone .intro1 {
+    font-size: 1.8vw;
   }
 }
 header .intro-zone .intro2 {
   font-size: 2.2vw;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  header .intro-zone .intro2 {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
   header .intro-zone .intro2 {
     font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 1224px) {
+  header .intro-zone .intro2 {
+    font-size: 1.4vw;
   }
 }
 
 nav {
   grid-column: 1/2;
   grid-row: 1/2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   width: 40vw;
   position: fixed;
   top: 0;
   z-index: 1000;
   padding: 2vw 3vw;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  nav {
+    flex-direction: row;
+    width: 100vw;
+    padding: 3vw;
+  }
+}
+@media screen and (min-width: 768px) {
   nav {
     width: 28vw;
     align-items: flex-start;
@@ -87,19 +152,19 @@ nav {
     padding: 2vw 3vw 2vw 0;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   nav .zoneBouton1 {
     grid-column: 1/2;
     grid-row: 1/2;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   nav .zoneBouton3 {
     grid-column: 2/3;
     grid-row: 1/2;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   nav .zonePrBtn {
     grid-column: 3/4;
     grid-row: 1/2;
@@ -121,7 +186,14 @@ aside {
   grid-template-columns: subgrid;
   grid-template-rows: repeat(3, max-content);
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  aside {
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
   aside {
     grid-column: 2/6;
     grid-row: 2/3;
@@ -137,7 +209,15 @@ aside {
   flex-direction: column;
   padding: 20% 10%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .aside-zone {
+    padding: 2% 1%;
+    margin: 5% 10%;
+    max-height: 15vh;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width: 768px) {
   .aside-zone {
     grid-column: 3/5;
     grid-row: 1/2;
@@ -148,9 +228,34 @@ aside {
 .zoneBouton2 {
   margin: 3% auto;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .zoneBouton2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
   .zoneBouton2 {
     margin: 2% auto;
+  }
+}
+
+.zoneBloc2,
+.zoneBloc4,
+.zoneBloc2-open,
+.zoneBloc4-open {
+  display: block;
+  padding: 2vw;
+}
+
+.zoneBloc2-close,
+.zoneBloc4-close {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .zoneBloc2-close,
+  .zoneBloc4-close {
+    display: block;
+    padding: 2vw;
   }
 }
 
@@ -158,15 +263,15 @@ aside {
 .bloc2Second,
 .bloc4First,
 .bloc4Second {
-  font-size: 2.2vw;
+  font-size: 1.8vw;
   opacity: 0.5;
 }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .bloc2First,
   .bloc2Second,
   .bloc4First,
   .bloc4Second {
-    font-size: 1.8vw;
+    font-size: 3vw;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -177,20 +282,28 @@ aside {
     font-size: 1.4vw;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1824px) {
-  .bloc2First,
-  .bloc2Second,
-  .bloc4First,
-  .bloc4Second {
-    font-size: 1.3vw;
-  }
-}
-@media screen and (min-width: 1824px) {
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
   .bloc2First,
   .bloc2Second,
   .bloc4First,
   .bloc4Second {
     font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 2560px) {
+  .bloc2First,
+  .bloc2Second,
+  .bloc4First,
+  .bloc4Second {
+    font-size: 1vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .bloc2First,
+  .bloc2Second,
+  .bloc4First,
+  .bloc4Second {
+    font-size: 0.9vw;
   }
 }
 
@@ -199,43 +312,59 @@ aside {
 .data {
   grid-column: 3/6;
   display: block;
-  font-size: 2.2vw;
+  font-size: 2vw;
   margin: 2% 2% 2% 0;
   padding: 3vw;
 }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .dev,
   .cyber,
   .data {
-    font-size: 2.1vw;
+    font-size: 3.3vw;
+    padding: 4vw;
+    margin: 0 8%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .dev,
   .cyber,
   .data {
-    font-size: 1.7vw;
+    font-size: 1.8vw;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1224px) {
   .dev,
   .cyber,
   .data {
-    font-size: 1.5vw;
+    font-size: 1.6vw;
   }
 }
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
   .dev,
   .cyber,
   .data {
-    font-size: 1.3vw;
+    font-size: 1.4vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .dev,
+  .cyber,
+  .data {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .dev,
+  .cyber,
+  .data {
+    font-size: 1.1vw;
   }
 }
 
 .dev {
   grid-row: 1/2;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .dev {
     grid-column: 1/3;
   }
@@ -244,7 +373,7 @@ aside {
 .cyber {
   grid-row: 2/3;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .cyber {
     grid-column: 1/3;
   }
@@ -253,7 +382,7 @@ aside {
 .data {
   grid-row: 3/4;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .data {
     grid-column: 3/5;
     grid-row: 2/3;
@@ -263,7 +392,7 @@ aside {
 .badgesGCC {
   display: none;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .badgesGCC {
     grid-column: 1/2;
     grid-row: 2/3;
@@ -291,6 +420,17 @@ main {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 480px) {
+  main {
+    grid-row: 4/5;
+  }
+}
+@media screen and (max-width: 480px) {
+  main {
+    grid-column: 1/6;
+    grid-row: 4/5;
+  }
+}
 
 .zoneBloc1-open,
 .zoneBloc3-open {
@@ -301,33 +441,47 @@ main {
   padding: 2.5vw;
   margin: 3vw auto;
   width: 80%;
-  font-size: 2.4vw;
+  font-size: 2vw;
 }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .zoneBloc1-open,
   .zoneBloc3-open {
-    font-size: 2vw;
-    width: 70%;
+    font-size: 3vw;
+    width: 85%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .zoneBloc1-open,
   .zoneBloc3-open {
     font-size: 1.8vw;
-    width: 65%;
+    width: 70%;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1224px) {
   .zoneBloc1-open,
   .zoneBloc3-open {
-    font-size: 1.6vw;
+    font-size: 1.5vw;
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .zoneBloc1-open,
+  .zoneBloc3-open {
+    font-size: 1.3vw;
     width: 60%;
   }
 }
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
   .zoneBloc1-open,
   .zoneBloc3-open {
-    font-size: 1.4vw;
+    font-size: 1.1vw;
+    width: 55%;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .zoneBloc1-open,
+  .zoneBloc3-open {
+    font-size: 1vw;
     width: 55%;
   }
 }
@@ -358,11 +512,14 @@ main {
 .portfolio-open {
   grid-column: 1/6;
   grid-row: 4/5;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
   margin: 5%;
+}
+@media screen and (max-width: 480px) {
+  .portfolio-open {
+    grid-column: 1/6;
+    grid-row: 5/6;
+  }
 }
 
 .zoneClosePrBtn {
@@ -372,10 +529,7 @@ main {
 .portfolio-1,
 .portfolio-2,
 .portfolio-3 {
-  display: flex;
-  flex-direction: column-reverse;
   flex-shrink: 0;
-  justify-content: space-around;
 }
 
 .zoneClosePrBtn.open {
@@ -389,23 +543,23 @@ main {
 .portfolio-3 {
   max-width: 30%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .portfolio-2,
+  .portfolio-3 {
+    max-width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
   .portfolio-2,
   .portfolio-3 {
     max-width: 30%;
   }
 }
 
-.portfolio1-content,
-.portfolio2-content,
-.portfolio3-content,
 .portfolio1-content-open,
 .portfolio2-content-open,
 .portfolio3-content-open {
-  display: flex;
-  flex-direction: row;
   flex-shrink: 0;
-  justify-content: space-around;
   padding-bottom: 3%;
 }
 
@@ -435,14 +589,35 @@ main {
   line-height: 1.3;
   opacity: 0.6;
 }
-@media screen and (min-width: 768px) and (max-width: 1224px) {
+@media screen and (max-width: 480px) {
+  .portfolio1-note {
+    font-size: 2vw;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .portfolio1-note {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
   .portfolio1-note {
     font-size: 1.4vw;
   }
 }
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
   .portfolio1-note {
     font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .portfolio1-note {
+    font-size: 1vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .portfolio1-note {
+    font-size: 0.9vw;
   }
 }
 
@@ -466,16 +641,10 @@ main {
 
 .about-me-pr,
 .duoday {
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
   background-color: rgba(153, 187, 255, 0.3);
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
   padding: 0.6vw 2.8vw;
   margin: 2vw auto;
-  font-size: 2.2vw;
+  font-size: 2vw;
 }
 .about-me-pr a,
 .duoday a {
@@ -489,37 +658,110 @@ main {
   font-weight: bolder;
   transition: transform 0.5s ease-in-out;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .about-me-pr,
+  .duoday {
+    font-size: 2.6vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .about-me-pr,
+  .duoday {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
   .about-me-pr,
   .duoday {
     font-size: 1.4vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .about-me-pr,
+  .duoday {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .about-me-pr,
+  .duoday {
+    font-size: 1vw;
   }
 }
 
 .webPr1-text1,
 .webPr2-text2 {
   opacity: 0.5;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   line-height: 0.9;
   padding: 0 1vw;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .webPr1-text1,
+  .webPr2-text2 {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .webPr1-text1,
+  .webPr2-text2 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
   .webPr1-text1,
   .webPr2-text2 {
     font-size: 1vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .webPr1-text1,
+  .webPr2-text2 {
+    font-size: 0.9vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .webPr1-text1,
+  .webPr2-text2 {
+    font-size: 0.8vw;
   }
 }
 
 .webPr1-text2,
 .webPr2-text1 {
   padding: 0.6vw 1vw;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   line-height: 1.2;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) and (max-width: 1224px) {
+  .webPr1-text2,
+  .webPr2-text1 {
+    font-size: 2.2vw;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 768px) {
+  .webPr1-text2,
+  .webPr2-text1 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .webPr1-text2,
+  .webPr2-text1 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
   .webPr1-text2,
   .webPr2-text1 {
     font-size: 1vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .webPr1-text2,
+  .webPr2-text1 {
+    font-size: 0.8vw;
   }
 }
 
@@ -531,7 +773,7 @@ main {
   padding: 2vw;
   max-width: 95%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .google-cyber,
   .google-data {
     grid-template-columns: repeat(2, fit-content(35vw));
@@ -547,7 +789,7 @@ main {
   transform: scale(2.5);
   transition: transform 0.3s ease-in-out;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .img-gcc-cyber:hover,
   .img-gcc-data:hover {
     transform: scale(2);
@@ -560,10 +802,34 @@ main {
   font-size: 1.8vw;
   line-height: 1.3;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .cyber-text1,
+  .data-text1 {
+    font-size: 2.2vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
   .cyber-text1,
   .data-text1 {
     font-size: 1.4vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .cyber-text1,
+  .data-text1 {
+    font-size: 1vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .cyber-text1,
+  .data-text1 {
+    font-size: 0.9vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .cyber-text1,
+  .data-text1 {
+    font-size: 0.8vw;
   }
 }
 
@@ -574,10 +840,34 @@ main {
   padding-top: 2vw;
   opacity: 0.5;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
   .cyber-text2,
   .data-text2 {
-    font-size: 1vw;
+    font-size: 1.8vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .cyber-text2,
+  .data-text2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .cyber-text2,
+  .data-text2 {
+    font-size: 0.9vw;
+  }
+}
+@media screen and (min-width: 1824px) and (max-width: 2560px) {
+  .cyber-text2,
+  .data-text2 {
+    font-size: 0.8vw;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .cyber-text2,
+  .data-text2 {
+    font-size: 0.7vw;
   }
 }
 
@@ -593,7 +883,13 @@ main {
   filter: drop-shadow(0px 0px 70px #022975);
   border-radius: 10%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .zoneDevImg {
+    grid-row: 6/7;
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
   .zoneDevImg {
     grid-column: 3/6;
     margin: 4vw auto;
@@ -608,7 +904,12 @@ footer {
   grid-template-rows: repeat(2, max-content);
   margin: 5% 0 3%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  footer {
+    grid-row: 7/8;
+  }
+}
+@media screen and (min-width: 768px) {
   footer {
     grid-column: 1/3;
     grid-row: 5/6;
@@ -624,7 +925,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, max-content);
   text-align: center;
-  font-size: 2.2vw;
+  font-size: 2vw;
 }
 .zoneMyself-open a {
   color: #030376;
@@ -636,30 +937,45 @@ footer {
   font-weight: bolder;
   transition: transform 0.5s ease-in-out;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .zoneMyself-open {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (min-width: 768px) {
   .zoneMyself-open {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 1.4vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .zoneMyself-open {
     font-size: 1.2vw;
   }
 }
+@media screen and (min-width: 1824px) {
+  .zoneMyself-open {
+    font-size: 1vw;
+    justify-content: space-evenly;
+  }
+}
 .zoneMyself-open .myGitHub {
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
   background-color: rgba(153, 187, 255, 0.3);
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  padding: 0.6vw 2.8vw;
+  padding: 0.6vw 2.2vw;
   margin: 2% 30%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .zoneMyself-open .myGitHub {
     grid-column: 2/3;
     grid-row: 1/2;
     margin: 3%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .zoneMyself-open .myGitHub {
+    margin: 2% 27%;
   }
 }
 .zoneMyself-open .place {
@@ -668,7 +984,7 @@ footer {
 .zoneMyself-open .place > p {
   padding: 5% 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .zoneMyself-open .place {
     grid-column: 2/3;
     grid-row: 2/3;
@@ -677,13 +993,13 @@ footer {
 .zoneMyself-open .myMail > a {
   padding-top: 10%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .zoneMyself-open .myMail {
     grid-column: 2/3;
     grid-row: 3/4;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .zoneMyself-open .myLinkedIn {
     grid-column: 3/4;
     grid-row: 3/4;
@@ -696,16 +1012,26 @@ footer {
   transform: scale(1.3);
   transition: transform 0.3s ease-in-out;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
   .zoneMyself-open .imgIn {
-    width: 20%;
+    width: 35%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 2560px) {
+  .zoneMyself-open .imgIn {
+    width: 18%;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .zoneMyself-open .imgIn {
+    width: 15%;
   }
 }
 
 .contactBtn {
   margin: 0 0 5% 6%;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .contactBtn {
     margin: 0 0 10% 15%;
   }
@@ -715,15 +1041,99 @@ footer {
   display: none;
 }
 
-.zoneBloc2-open,
-.zoneBloc4-open {
-  display: block;
-  padding: 2vw;
+.bouton5,
+.bouton6,
+.bouton2,
+.closePrBtn, .bouton1,
+.bouton3,
+.projectsBtn,
+.contactBtn,
+.webBtn,
+.cyberBtn,
+.dataBtn, .about-me-pr,
+.duoday, .zoneMyself-open .myGitHub {
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
 }
 
-.zoneBloc2-close,
-.zoneBloc4-close {
-  display: none;
+.bouton1,
+.bouton2,
+.bouton3,
+.bouton5,
+.bouton6,
+.projectsBtn,
+.contactBtn,
+.webBtn,
+.cyberBtn,
+.dataBtn,
+.closePrBtn {
+  padding: 0.6vw 2.6vw;
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
+  font-size: 2.2vw;
+}
+@media screen and (max-width: 480px) {
+  .bouton1,
+  .bouton2,
+  .bouton3,
+  .bouton5,
+  .bouton6,
+  .projectsBtn,
+  .contactBtn,
+  .webBtn,
+  .cyberBtn,
+  .dataBtn,
+  .closePrBtn {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
+  .bouton1,
+  .bouton2,
+  .bouton3,
+  .bouton5,
+  .bouton6,
+  .projectsBtn,
+  .contactBtn,
+  .webBtn,
+  .cyberBtn,
+  .dataBtn,
+  .closePrBtn {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .bouton1,
+  .bouton2,
+  .bouton3,
+  .bouton5,
+  .bouton6,
+  .projectsBtn,
+  .contactBtn,
+  .webBtn,
+  .cyberBtn,
+  .dataBtn,
+  .closePrBtn {
+    font-size: 1.4vw;
+  }
+}
+@media screen and (min-width: 1824px) {
+  .bouton1,
+  .bouton2,
+  .bouton3,
+  .bouton5,
+  .bouton6,
+  .projectsBtn,
+  .contactBtn,
+  .webBtn,
+  .cyberBtn,
+  .dataBtn,
+  .closePrBtn {
+    font-size: 1.2vw;
+  }
 }
 
 .toggleBtn1,
@@ -748,13 +1158,7 @@ footer {
 .webBtn,
 .cyberBtn,
 .dataBtn {
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
   background-color: rgba(255, 255, 255, 0.3);
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
 }
 
 .bouton1,
@@ -763,7 +1167,7 @@ footer {
   background-color: #d9e3f2;
   border: solid 0.8px #6699ff;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .bouton1,
   .bouton3,
   .projectsBtn {
@@ -775,56 +1179,40 @@ footer {
 .bouton6,
 .bouton2,
 .closePrBtn {
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 102, 0.4) 0px 19px 38px, rgba(0, 0, 102, 0.25) 0px 15px 12px;
   background-color: rgba(153, 187, 255, 0.3);
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-}
-
-.bouton1,
-.bouton2,
-.bouton3,
-.bouton5,
-.bouton6,
-.projectsBtn,
-.contactBtn,
-.webBtn,
-.cyberBtn,
-.dataBtn,
-.closePrBtn {
-  padding: 0.6vw 2.6vw;
-  font-family: "Dosis", Helvetica, Arial, sans-serif;
-  font-size: 2.4vw;
-}
-@media screen and (min-width: 480px) {
-  .bouton1,
-  .bouton2,
-  .bouton3,
-  .bouton5,
-  .bouton6,
-  .projectsBtn,
-  .contactBtn,
-  .webBtn,
-  .cyberBtn,
-  .dataBtn,
-  .closePrBtn {
-    font-size: 1.6vw;
-  }
 }
 
 .bouton2,
 .bouton5,
 .bouton6 {
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .bouton2,
+  .bouton5,
+  .bouton6 {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1224px) {
   .bouton2,
   .bouton5,
   .bouton6 {
     font-size: 1.2vw;
+  }
+}
+@media screen and (min-width: 1224px) and (max-width: 1824px) {
+  .bouton2,
+  .bouton5,
+  .bouton6 {
+    font-size: 1vw;
+  }
+}
+@media screen and (min-width: 1824px) {
+  .bouton2,
+  .bouton5,
+  .bouton6 {
+    font-size: 0.8vw;
   }
 }
 
@@ -864,7 +1252,22 @@ footer {
   background-color: rgba(153, 187, 255, 0.3);
   border: solid 1.5px #022975;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .bouton1:active,
+  .bouton3:active,
+  .projectsBtn:active,
+  .bouton2:active,
+  .contactBtn:active,
+  .webBtn:active,
+  .cyberBtn:active,
+  .dataBtn:active,
+  .bouton5:active,
+  .bouton6:active,
+  .closePrBtn:active {
+    border: solid 1px #022975;
+  }
+}
+@media screen and (min-width: 768px) {
   .bouton1:active,
   .bouton3:active,
   .projectsBtn:active,

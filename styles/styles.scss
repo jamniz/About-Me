@@ -28,18 +28,19 @@ $shadow2: rgba(0, 0, 102, 0.56) 0px 22px 70px 4px;
 $shadow4: rgba(0, 0, 102, 0.1) 0px 0px 25px 15px inset;
 
 // breakpoints
-$small: 480px;
-$width2: 768px;
-$width3: 1024px;
-$width4: 1224px;
-$width5: 1824px;
+$small2: 480px;
+$small: 768px;
+$width2: 1024px;
+$width3: 1224px;
+$width4: 1824px;
+$width5: 2560px;
 
 // Variables
 $column-width: 20vw;
 $navbar-width: 2*$column-width;
 $navbar-width2: 1.4*$column-width;
 
-// Mixin pour les liens
+// Mixins
 @mixin link-style($clr-font) {
     color: $clr-font;
     text-decoration: underline;
@@ -59,6 +60,26 @@ $navbar-width2: 1.4*$column-width;
     }
 }
 
+// Placeholders
+%flex-col-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+%flex-colrev-around {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+}
+
+%flex-row-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
 body {
     background: linear-gradient(to bottom, $c-grad1 0%, $c-grad2 100%);
     background-attachment: fixed;
@@ -71,6 +92,11 @@ body {
     display: grid;
     grid-template-rows: repeat(6, max-content);
     grid-template-columns: repeat(5, 1fr);
+
+    @media screen and (max-width: $small2) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, max-content);
+    }
 
     @media screen and (min-width: $small) {
         grid-template-rows: repeat(5, max-content);
@@ -88,16 +114,26 @@ header {
     grid-row: 1/2;
     position: relative;
 
+    @media screen and (max-width: $small2) {
+        grid-column: 1/6;
+        grid-row: 2/3;
+        position: relative;
+        margin-top: 10%;
+    }
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, max-content);
-    // margin-bottom: 3%;
 
     .selectBtn {
         text-align: right;
         padding: 2% 0;
         margin-right: 2%;
         grid-row: 1/2;
+
+        @media screen and (max-width: $small2) {
+            margin-top: 4%;
+        }
 
         select {
             border: none;
@@ -119,16 +155,32 @@ header {
         .intro1 {
             font-size: 2.6vw;
 
-            @media screen and (min-width: $small) {
+            @media screen and (max-width: $small2) {
+                font-size: 3.6vw;
+            }
+
+            @media screen and (min-width: $small) and (max-width: $width3) {
                 font-size: 2.2vw;
+            }
+
+            @media screen and (min-width: $width3) {
+                font-size: 1.8vw;
             }
         }
 
         .intro2 {
             font-size: 2.2vw;
 
-            @media screen and (min-width: $small) {
+            @media screen and (max-width: $small2) {
+                font-size: 3vw;
+            }
+
+            @media screen and (min-width: $small) and (max-width: $width3) {
                 font-size: 1.8vw;
+            }
+
+            @media screen and (min-width: $width3) {
+                font-size: 1.4vw;
             }
         }
     }
@@ -137,14 +189,19 @@ header {
 nav {
     grid-column: 1/2;
     grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
+    @extend %flex-col-around;
     width: $navbar-width;
     position: fixed;
     top: 0;
     z-index: 1000;
     padding: 2vw 3vw;
+
+    @media screen and (max-width: $small2) {
+        flex-direction: row;
+        width: 100vw;
+        padding: 3vw;
+    }
 
     @media screen and (min-width: $small) {
         width: $navbar-width2;
@@ -187,9 +244,16 @@ nav {
 aside {
     grid-column: 1/6;
     grid-row: 2/3;
+
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: repeat(3, max-content);
+
+    @media screen and (max-width: $small2) {
+        grid-row: 3/4;
+        display: flex;
+        flex-direction: column;
+    }
 
     @media screen and (min-width: $small) {
         grid-column: 2/6;
@@ -202,9 +266,17 @@ aside {
 .aside-zone {
     grid-column: 1/3;
     grid-row: 1/4;
+
     display: flex;
     flex-direction: column;
     padding: 20% 10%;
+
+    @media screen and (max-width: $small2) {
+        padding: 2% 1%;
+        margin: 5% 10%;
+        max-height: 15vh;
+        overflow: scroll;
+    }
 
     @media screen and (min-width: $small) {
         grid-column: 3/5;
@@ -216,8 +288,30 @@ aside {
 .zoneBouton2 {
     margin: 3% auto;
 
+    @media screen and (max-width: $small2) {
+        display: none;
+    }
+
     @media screen and (min-width: $small) {
         margin: 2% auto;
+    }
+}
+
+.zoneBloc2,
+.zoneBloc4,
+.zoneBloc2-open,
+.zoneBloc4-open {
+    display: block;
+    padding: 2vw;
+}
+
+.zoneBloc2-close,
+.zoneBloc4-close {
+    display: none;
+
+    @media screen and (max-width: $small2) {
+        display: block;
+        padding: 2vw;
     }
 }
 
@@ -225,23 +319,27 @@ aside {
 .bloc2Second,
 .bloc4First,
 .bloc4Second {
-    font-size: 2.2vw;
+    font-size: 1.8vw;
     opacity: 0.5;
 
-    @media screen and (min-width: $small) and (max-width: $width2) {
-        font-size: 1.8vw;
+    @media screen and (max-width: $small2) {
+        font-size: 3vw;
     }
 
-    @media screen and (min-width: $width2) and (max-width: $width3) {
+    @media screen and (min-width: $small) and (max-width: $width2) {
         font-size: 1.4vw;
     }
 
+    @media screen and (min-width: $width2) and (max-width: $width3) {
+        font-size: 1.2vw;
+    }
+
     @media screen and (min-width: $width3) and (max-width: $width5) {
-        font-size: 1.3vw;
+        font-size: 1vw;
     }
 
     @media screen and (min-width: $width5) {
-        font-size: 1.2vw;
+        font-size: 0.9vw;
     }
 }
 
@@ -250,24 +348,34 @@ aside {
 .data {
     grid-column: 3/6;
     display: block;
-    font-size: 2.2vw;
+    font-size: 2vw;
     margin: 2% 2% 2% 0;
     padding: 3vw;
 
+    @media screen and (max-width: $small2) {
+        font-size: 3.3vw;
+        padding: 4vw;
+        margin: 0 8%;
+    }
+
     @media screen and (min-width: $small) and (max-width: $width2) {
-        font-size: 2.1vw;
+        font-size: 1.8vw;
     }
 
     @media screen and (min-width: $width2) and (max-width: $width3) {
-        font-size: 1.7vw;
+        font-size: 1.6vw;
     }
 
     @media screen and (min-width: $width3) and (max-width: $width4) {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
     }
 
-    @media screen and (min-width: $width4) {
-        font-size: 1.3vw;
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 1.1vw;
     }
 }
 
@@ -319,11 +427,20 @@ aside {
 main {
     grid-column: 1/6;
     grid-row: 3/4;
+
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: $small2) {
+        grid-row: 4/5;
+    }
+
+    @media screen and (max-width: $small2) {
+        grid-column: 1/6;
+        grid-row: 4/5;
+    }
 }
 
-// Styles spécifiques aux actions des boutons
 .zoneBloc1-open,
 .zoneBloc3-open {
     display: block;
@@ -333,25 +450,35 @@ main {
     padding: 2.5vw;
     margin: 3vw auto;
     width: 80%;
-    font-size: 2.4vw;
+    font-size: 2vw;
+
+    @media screen and (max-width: $small2) {
+        font-size: 3vw;
+        width: 85%;
+    }
 
     @media screen and (min-width: $small) and (max-width: $width2) {
-        font-size: 2vw;
+        font-size: 1.8vw;
         width: 70%;
     }
 
     @media screen and (min-width: $width2) and (max-width: $width3) {
-        font-size: 1.8vw;
+        font-size: 1.5vw;
         width: 65%;
     }
 
     @media screen and (min-width: $width3) and (max-width: $width4) {
-        font-size: 1.6vw;
+        font-size: 1.3vw;
         width: 60%;
     }
 
-    @media screen and (min-width: $width4) {
-        font-size: 1.4vw;
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 1.1vw;
+        width: 55%;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 1vw;
         width: 55%;
     }
 }
@@ -383,11 +510,15 @@ main {
 .portfolio-open {
     grid-column: 1/6;
     grid-row: 4/5;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+    @extend %flex-row-around;
     flex-wrap: wrap;
     margin: 5%;
+
+    @media screen and (max-width: $small2) {
+        grid-column: 1/6;
+        grid-row: 5/6;
+    }
 }
 
 .zoneClosePrBtn {
@@ -397,10 +528,8 @@ main {
 .portfolio-1,
 .portfolio-2,
 .portfolio-3 {
-    display: flex;
-    flex-direction: column-reverse;
+    @extend %flex-colrev-around;
     flex-shrink: 0;
-    justify-content: space-around;
 }
 
 .zoneClosePrBtn {
@@ -417,21 +546,20 @@ main {
 .portfolio-3 {
     max-width: 30%;
 
+    @media screen and (max-width: $small2) {
+        max-width: 40%;
+    }
+
     @media screen and (min-width: $small) {
         max-width: 30%;
     }
 }
 
-.portfolio1-content,
-.portfolio2-content,
-.portfolio3-content,
 .portfolio1-content-open,
 .portfolio2-content-open,
 .portfolio3-content-open {
-    display: flex;
-    flex-direction: row;
+    @extend %flex-row-around;
     flex-shrink: 0;
-    justify-content: space-around;
     padding-bottom: 3%;
 }
 
@@ -451,7 +579,6 @@ main {
     flex-shrink: 0;
     flex-basis: content;
     justify-content: space-evenly;
-    // gap: 5%;
 }
 
 .portfolio1-note {
@@ -462,12 +589,29 @@ main {
     line-height: 1.3;
     opacity: 0.6;
 
-    @media screen and (min-width: $width2) and (max-width: $width4) {
+    @media screen and (max-width: $small2) {
+        font-size: 2vw;
+        line-height: 1.4;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width2) {
+        font-size: 1.6vw;
+    }
+
+    @media screen and (min-width: $width2) and (max-width: $width3) {
         font-size: 1.4vw;
     }
 
-    @media screen and (min-width: $width4) {
+    @media screen and (min-width: $width3) and (max-width: $width4) {
         font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 1vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 0.9vw;
     }
 }
 
@@ -491,46 +635,90 @@ main {
 
 .about-me-pr,
 .duoday {
-    border-radius: 25px;
-    box-shadow: $shadow1;
+    @extend %btn-style;
     background-color: $bc-btn4;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
     padding: 0.6vw 2.8vw;
     margin: 2vw auto;
-    font-size: 2.2vw;
+    font-size: 2vw;
 
     a {
         @include link-style($clr-font);
     }
 
-    @media screen and (min-width: $small) {
+    @media screen and (max-width: $small2) {
+        font-size: 2.6vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
+        font-size: 1.6vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
         font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 1vw;
     }
 }
 
 .webPr1-text1,
 .webPr2-text2 {
     opacity: 0.5;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     line-height: 0.9;
     padding: 0 1vw;
 
-    @media screen and (min-width: $small) {
+    @media screen and (max-width: $small2) {
+        font-size: 2vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
+        font-size: 1.3vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
         font-size: 1vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 0.9vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 0.8vw;
     }
 }
 
 .webPr1-text2,
 .webPr2-text1 {
     padding: 0.6vw 1vw;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     line-height: 1.2;
 
+    @media screen and (max-width: $small2) and (max-width: $width3) {
+        font-size: 2.2vw;
+        line-height: 1.4;
+    }
+
     @media screen and (min-width: $small) {
+        font-size: 1.3vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
         font-size: 1vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 0.8vw;
     }
 }
 
@@ -562,8 +750,24 @@ main {
     font-size: 1.8vw;
     line-height: 1.3;
 
-    @media screen and (min-width: $small) {
+    @media screen and (max-width: $small2) {
+        font-size: 2.2vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
         font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 0.9vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 0.8vw;
     }
 }
 
@@ -574,8 +778,24 @@ main {
     padding-top: 2vw;
     opacity: 0.5;
 
-    @media screen and (min-width: $small) {
-        font-size: 1vw;
+    @media screen and (max-width: $small2) {
+        font-size: 1.8vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
+        font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 0.9vw;
+    }
+
+    @media screen and (min-width: $width4) and (max-width: $width5) {
+        font-size: 0.8vw;
+    }
+
+    @media screen and (min-width: $width5) {
+        font-size: 0.7vw;
     }
 }
 
@@ -592,9 +812,13 @@ main {
         border-radius: 10%;
     }
 
+    @media screen and (max-width: $small2) {
+        grid-row: 6/7;
+        display: none;
+    }
+
     @media screen and (min-width: $small) {
         grid-column: 3/6;
-        // grid-row: 7/8;
         margin: 4vw auto;
     }
 }
@@ -603,10 +827,15 @@ main {
 footer {
     grid-column: 1/6;
     grid-row: 6/7;
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, max-content);
     margin: 5% 0 3%;
+
+    @media screen and (max-width: $small2) {
+        grid-row: 7/8;
+    }
 
     @media screen and (min-width: $small) {
         grid-column: 1/3;
@@ -616,42 +845,54 @@ footer {
     }
 }
 
-// .zoneMyself,
 .zoneMyself-open {
     grid-column: 1/2;
     grid-row: 1/2;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, max-content);
     text-align: center;
-    font-size: 2.2vw;
+    font-size: 2vw;
 
     a {
         @include link-style($clr-font);
+    }
+
+    @media screen and (max-width: $small2) {
+        font-size: 2.8vw;
     }
 
     @media screen and (min-width: $small) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
         font-size: 1.2vw;
     }
 
+    @media screen and (min-width: $width4) {
+        font-size: 1vw;
+        justify-content: space-evenly;
+    }
+
     .myGitHub {
-        border-radius: 25px;
-        box-shadow: $shadow1;
+        @extend %btn-style;
         background-color: $bc-btn4;
-        display: inline-block;
-        text-align: center;
-        position: relative;
-        cursor: pointer;
-        padding: 0.6vw 2.8vw;
+        padding: 0.6vw 2.2vw;
         margin: 2% 30%;
 
         @media screen and (max-width: $small) {
             grid-column: 2/3;
             grid-row: 1/2;
             margin: 3%;
+        }
+
+        @media screen and (min-width: $small) {
+            margin: 2% 27%;
         }
     }
 
@@ -690,8 +931,16 @@ footer {
         width: 30%;
         @include imageHoverEffect(1.3);
 
-        @media screen and (min-width: $small) {
-            width: 20%;
+        @media screen and (max-width: $small2) {
+            width: 35%;
+        }
+
+        @media screen and (min-width: $small) and (max-width: $width5) {
+            width: 18%;
+        }
+
+        @media screen and (min-width: $width5) {
+            width: 15%;
         }
     }
 }
@@ -708,21 +957,39 @@ footer {
     display: none;
 }
 
-// Styles spécifiques aux actions des boutons
-.zoneBloc2-open,
-.zoneBloc4-open {
-    display: block;
-    padding: 2vw;
+
+// ***BOUTONS***
+%btn-style {
+    border-radius: 25px;
+    box-shadow: $shadow1;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
 }
 
-.zoneBloc2-close,
-.zoneBloc4-close {
-    display: none;
+%btn-text-style {
+    padding: 0.6vw 2.6vw;
+    font-family: $ff1;
+    font-size: 2.2vw;
+
+    @media screen and (max-width: $small2) {
+        font-size: 3vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
+        font-size: 1.6vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1.4vw;
+    }
+
+    @media screen and (min-width: $width4) {
+        font-size: 1.2vw;
+    }
 }
 
-
-
-// BOUTONS
 .toggleBtn1,
 .toggleBtn2,
 .toggleBtn3,
@@ -745,13 +1012,8 @@ footer {
 .webBtn,
 .cyberBtn,
 .dataBtn {
-    border-radius: 25px;
-    box-shadow: $shadow1;
+    @extend %btn-style;
     background-color: $bc-btn;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
 }
 
 .bouton1,
@@ -769,13 +1031,8 @@ footer {
 .bouton6,
 .bouton2,
 .closePrBtn {
-    border-radius: 25px;
-    box-shadow: $shadow1;
+    @extend %btn-style;
     background-color: $bc-btn4;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
 }
 
 .bouton1,
@@ -789,22 +1046,28 @@ footer {
 .cyberBtn,
 .dataBtn,
 .closePrBtn {
-    padding: 0.6vw 2.6vw;
-    font-family: $ff1;
-    font-size: 2.4vw;
-
-    @media screen and (min-width: $small) {
-        font-size: 1.6vw;
-    }
+    @extend %btn-text-style
 }
 
 .bouton2,
 .bouton5,
 .bouton6 {
-    font-size: 2vw;
+    font-size: 1.8vw;
 
-    @media screen and (min-width: $small) {
+    @media screen and (max-width: $small2) {
+        font-size: 2.8vw;
+    }
+
+    @media screen and (min-width: $small) and (max-width: $width3) {
         font-size: 1.2vw;
+    }
+
+    @media screen and (min-width: $width3) and (max-width: $width4) {
+        font-size: 1vw;
+    }
+
+    @media screen and (min-width: $width4) {
+        font-size: 0.8vw;
     }
 }
 
@@ -843,6 +1106,10 @@ footer {
 .closePrBtn:active {
     background-color: $bc-btn4;
     border: solid 1.5px $c-grad3;
+
+    @media screen and (max-width: $small2) {
+        border: solid 1px $c-grad3;
+    }
 
     @media screen and (min-width: $small) {
         border: solid 2px $c-grad3;
