@@ -1,8 +1,9 @@
 # Some facts about me
 _Français / English_
 
-See ➡️ ['About Me'](https://jamniz.github.io/About-Me/ "click-me to go") 😉
+See ➡️ ['About Me'](https://jamniz.github.io/About-Me/ "click-me to go") 😉 _**UPDATING...**_
 
+![Updating...](<pictures/under-construction-29020 - mod2.png>)
 ***
 
 _**My trip through lines, one button at a time, one word at a time.**_
