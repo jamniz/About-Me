@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let skills10 = document.getElementById("skills10")
     let skills11 = document.getElementById("skills11")
     let skills12 = document.getElementById("skills12")
+    let skills13 = document.getElementById("skills13")
     let notions = document.getElementById("notions")
     let devDomaine = document.getElementById("dev-domaine")
     let cyberDomaine = document.getElementById("cyber-domaine")
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let portfolio = document.querySelector(".portfolio")
     let zoneDevImg = document.querySelector(".zoneDevImg")
     let webPr1Text2 = document.getElementById("webPr1-text2")
+    let webPr3Text2 = document.getElementById("webPr3-text2")
     let cyberText1 = document.querySelector(".cyber-text1")
     let cyberText2 = document.querySelector(".cyber-text2")
     let dataText1 = document.querySelector(".data-text1")
@@ -84,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "skills10": "Python",
             "skills11": "Compétences analytiques&nbsp;&ndash; nettoyage des données, analyse, visualisation",
             "skills12": "Outils&nbsp;&ndash; Spreadsheets/ Excel, R, Tableau",
+            "skills13": "NodeJS, Express, MongoDB",
             "notions": "<em>Notions&nbsp;:</em>",
             "dev-domaine": "<strong>Développement Web</strong>",
             "cyber-domaine": "<strong>Cybersécurité</strong>",
@@ -117,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "contactBtn-open": "<strong>Contact</strong>",
             "contactBtn-close": "<em>Fermer</em>",
             "webPr1-text2": "<em>Mon voyage à travers les lignes,<br>un bouton à la fois,<br>un mot à la fois</em>",
+            "webPr3-text2": "<em>Le code dans sa forme<br>la plus pure.</em>",
             "cyber-text1": "Portfolio réalisé dans le cadre du certificat.",
             "cyber-text2": "À venir (en cours de préparation)",
             "data-text1": "Portfolio réalisé dans le cadre du certificat.",
@@ -141,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "skills10": "Python",
             "skills11": "Analytical skills&nbsp;&ndash; data cleaning, analysis, visualization",
             "skills12": "Tools&nbsp;&ndash; Spreadsheets/ Excel, R, Tableau",
+            "skills13": "NodeJS, Express, MongoDB",
             "notions": "<em>Fundamentals:</em>",
             "dev-domaine": "<strong>Web Development</strong>",
             "cyber-domaine": "<strong>Cybersecurity</strong>",
@@ -174,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "contactBtn-open": "<strong>Contact</strong>",
             "contactBtn-close": "<em>Close</em>",
             "webPr1-text2": "<em>My trip through lines,<br>one button at a time,<br>one word at a time.</em>",
+            "webPr3-text2": "<em>Code in its purest form</em>",
             "cyber-text1": "Portfolio created as part of the certificate.",
             "cyber-text2": "Coming soon (in progress)",
             "data-text1": "Portfolio created as part of the certificate.",
@@ -214,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
             skills10.textContent = traductions[langue]["skills10"]
             skills11.innerHTML = traductions[langue]["skills11"]
             skills12.innerHTML = traductions[langue]["skills12"]
+            skills13.innerHTML = traductions[langue]["skills13"]
             notions.innerHTML = traductions[langue]["notions"]
             devDomaine.innerHTML = traductions[langue]["dev-domaine"]
             cyberDomaine.innerHTML = traductions[langue]["cyber-domaine"]
@@ -242,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dataBtn.innerHTML = etatDataBtn ? traductions[langue]["dataBtn-close"] : traductions[langue]["dataBtn-open"]
             contactBtn.innerHTML = etatContactBtn ? traductions[langue]["contactBtn-close"] : traductions[langue]["contactBtn-open"]
             webPr1Text2.innerHTML = traductions[langue]["webPr1-text2"]
+            webPr3Text2.innerHTML = traductions[langue]["webPr3-text2"]
             cyberText1.textContent = traductions[langue]["cyber-text1"]
             cyberText2.textContent = traductions[langue]["cyber-text2"]
             dataText1.textContent = traductions[langue]["data-text1"]

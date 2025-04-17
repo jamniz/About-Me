@@ -1,9 +1,9 @@
 # Some facts about me
-_Français / English_
 
-See ➡️ ['About Me'](https://jamniz.github.io/About-Me/ "click-me to go") 😉 _**UPDATING...**_
+See ➡️ ['About Me'](https://jamniz.github.io/About-Me/ "click-me to go") 😉
 
-![Updating...](<pictures/under-construction-29020 - mod2.png>)
+>[!TIP]
+>Français (default) / English
 ***
 
 _**My trip through lines, one button at a time, one word at a time.**_
@@ -23,3 +23,8 @@ Pendant la création de ce projet, j'ai relevé plusieurs défis techniques qui 
 Ce voyage à travers les lignes de code a été enrichissant, et j'ai adoré chaque étape, chaque bouton, chaque mot.
 
 ***
+
+>[!NOTE]
+>_Still working on to make it better._
+
+🚀

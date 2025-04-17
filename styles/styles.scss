@@ -570,8 +570,9 @@ main {
     display: none;
 }
 
-.porfolio1-projet1,
-.porfolio1-projet2,
+.portfolio1-projet1,
+.portfolio1-projet2,
+.portfolio1-projet3,
 .portfolio1-note,
 .google-cyber,
 .google-data {
@@ -584,39 +585,15 @@ main {
 .portfolio1-note {
     display: inline-block;
     max-width: 35%;
-    padding: 4vw 2vw;
-    font-size: 1.8vw;
+    padding: 4vw;
+    font-size: clamp(0.5rem, 1.2vw, 1.2rem);
     line-height: 1.3;
-    opacity: 0.6;
-
-    @media screen and (max-width: $small2) {
-        font-size: 2vw;
-        line-height: 1.4;
-    }
-
-    @media screen and (min-width: $small) and (max-width: $width2) {
-        font-size: 1.6vw;
-    }
-
-    @media screen and (min-width: $width2) and (max-width: $width3) {
-        font-size: 1.4vw;
-    }
-
-    @media screen and (min-width: $width3) and (max-width: $width4) {
-        font-size: 1.2vw;
-    }
-
-    @media screen and (min-width: $width4) and (max-width: $width5) {
-        font-size: 1vw;
-    }
-
-    @media screen and (min-width: $width5) {
-        font-size: 0.9vw;
-    }
+    opacity: 0.3;
 }
 
-.porfolio1-projet1,
-.porfolio1-projet2,
+.portfolio1-projet1,
+.portfolio1-projet2,
+.portfolio1-projet3,
 .google-cyber,
 .google-data {
     display: block;
@@ -634,7 +611,8 @@ main {
 }
 
 .about-me-pr,
-.duoday {
+.duoday,
+.portfolio-diy {
     @extend %btn-style;
     background-color: $bc-btn4;
     padding: 0.6vw 2.8vw;
@@ -695,7 +673,8 @@ main {
 }
 
 .webPr1-text2,
-.webPr2-text1 {
+.webPr2-text1,
+.webPr3-text2 {
     padding: 0.6vw 1vw;
     font-size: 1.6vw;
     line-height: 1.2;
